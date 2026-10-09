@@ -46,3 +46,49 @@ body {
   background-color: #00eaff;
   color: #000;
 }
+
+.skills {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.skills-intro {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.skill-item h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.skill-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
