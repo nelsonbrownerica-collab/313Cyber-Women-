@@ -92,3 +92,24 @@ body {
   color: #555;
 }
 
+.about {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
