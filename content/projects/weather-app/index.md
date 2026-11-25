@@ -1,179 +1,85 @@
 ---
-title: "WeatherNow - Real-Time Weather App"
-date: 2024-06-10
-summary: "Beautiful weather application with real-time data, 7-day forecasts, and interactive maps"
+title: "API-Driven Dashboard & Status App"
+date: 2026-11-25
+summary: "A clean dashboard that consumes a public or mocked API, handles loading/error states, caches responses, and protects configuration."
 tags:
-  - Frontend
-  - React
-  - API Integration
-  - PWA
-tech_stack:
-  - React
-  - TypeScript
-  - OpenWeather API
-  - Mapbox
-  - Tailwind CSS
-  - Vite
-links:
-  - type: github
-    url: https://github.com/alexjohnson/weather-now
-    label: Code
-  - type: live
-    url: https://weathernow-demo.netlify.app
-    label: Demo
+  - "Frontend/API"
+  - "Security Tools"
+authors:
+  - me
 featured: false
-status: "Live"
-role: "Solo Developer"
-duration: "3 weeks"
-team_size: 1
-highlights:
-  - "PWA with offline support"
-  - "5000+ monthly active users"
-  - "Lighthouse score: 100"
+status: "Planned"
+role: "Independent project build"
+duration: "To be determined"
 ---
+## Build status
 
-A fast, beautiful weather application that provides real-time weather data, forecasts, and interactive maps. Built as a Progressive Web App with offline support.
+**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
 
-## Overview
+## Project goal
 
-WeatherNow started as a weekend project to learn PWA development. It evolved into a fully-featured weather app used by thousands of people daily.
+A clean dashboard that consumes a public or mocked API, handles loading/error states, caches responses, and protects configuration.
 
-## Features
+## What to build
 
-### Weather Data
-- **Current Conditions** - Real-time weather for any location
-- **7-Day Forecast** - Detailed daily forecasts with hourly breakdown
-- **Weather Alerts** - Severe weather notifications
-- **Historical Data** - Past weather data and trends
+Build a reusable dashboard interface that can display current status cards and a short forecast from a safe public API or local fixture.
 
-### User Experience
-- **Location Detection** - Automatic location based on GPS or IP
-- **Search** - Find weather for any city worldwide
-- **Favorites** - Save frequently checked locations
-- **Units** - Toggle between metric and imperial
-- **Dark Mode** - Automatic or manual theme switching
+## Suggested technology stack
 
-### Progressive Web App
-- **Offline Support** - Access cached data without internet
-- **Install** - Add to home screen like a native app
-- **Fast** - Optimized for performance (Lighthouse 100)
-- **Responsive** - Perfect on any device
+JavaScript or React, HTML, CSS, Fetch API, optional local JSON fixtures.
 
-## Technical Highlights
+Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
 
-### Performance
-- Achieved **100/100 Lighthouse score** across all categories
-- Implemented service workers for offline functionality
-- Optimized bundle size: < 150KB gzipped
-- Lazy loading for images and components
-- Prefetching for instant navigation
+## Step-by-step build plan
 
-### Data Management
-- Smart caching strategy with stale-while-revalidate
-- Background sync for updated forecasts
-- Efficient API usage with request batching
-- Local storage for user preferences
+1. 1. Design responsive dashboard layout. 2. Create fixture data before using any external API. 3. Build reusable status cards. 4. Add loading, empty, and error states. 5. Add search and units/preferences. 6. Add caching and request throttling. 7. Keep API keys out of source control if an API key is required. 8. Test keyboard navigation and mobile layout.
 
-### UI/UX
-- Smooth animations with Framer Motion
-- Interactive weather map with Mapbox
-- Weather icons that match current conditions
-- Accessible (WCAG AA compliant)
+## Data model and interfaces
 
-## API Integration
+Frontend modules for data service, status cards, search, settings. Optional endpoint: GET /api/status?location=...
 
-Integrated multiple weather APIs for comprehensive data:
+## Acceptance criteria
 
-```typescript
-// Example: Fetching weather data
-const fetchWeather = async (lat: number, lon: number) => {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
-  )
-  return response.json()
-}
+- [ ] Works with fixture data offline
+- [ ] gracefully handles API failure
+- [ ] no secret in browser bundle or Git history
+- [ ] responsive and keyboard accessible.
+
+## Evidence to save
+
+- [ ] Desktop/mobile screenshots
+- [ ] fixture dataset
+- [ ] API contract
+- [ ] accessibility checklist
+- [ ] performance notes.
+
+## Suggested repository structure
+
+```text
+weather-app/
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── test-plan.md
+│   └── screenshots/
+├── src/
+├── tests/
+└── sample-data/
 ```
 
-## Architecture
+Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
 
-```
-┌─────────────┐     ┌──────────────┐
-│  React App  │────▶│ OpenWeather  │
-│   (Vite)    │     │     API      │
-└──────┬──────┘     └──────────────┘
-       │
-       │            ┌──────────────┐
-       └───────────▶│   Mapbox     │
-                    │     API      │
-                    └──────────────┘
-```
+## Final README checklist
 
-## Challenges
+- [ ] Explain the problem and intended users.
+- [ ] List the features actually implemented.
+- [ ] Document setup and run commands that have been tested.
+- [ ] Describe architecture and important design decisions.
+- [ ] Include screenshots or a short demo of your own application.
+- [ ] Include automated test results and known limitations.
+- [ ] Add a security and privacy section.
+- [ ] Link to a live demo only if it genuinely exists.
 
-### Challenge: API Rate Limits
-**Solution**: Implemented intelligent caching and request batching to stay within free tier limits while maintaining data freshness
+## Definition of done
 
-### Challenge: Offline Experience
-**Solution**: Service workers with cache-first strategy for UI, network-first for data with graceful fallbacks
-
-### Challenge: Performance on Slow Networks
-**Solution**: Image optimization, code splitting, and Progressive rendering for instant perceived performance
-
-## Results
-
-- 📈 **Users**: 5000+ monthly active users
-- ⚡ **Performance**: 100 Lighthouse score
-- 📱 **PWA**: 40% of users installed as app
-- 🌍 **Global**: Users from 50+ countries
-- ⭐ **Rating**: 4.8/5 average user rating
-
-## Tech Stack
-
-**Frontend**
-- React 18
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Vite (build tool)
-
-**APIs**
-- OpenWeather API
-- Mapbox GL JS
-- IP Geolocation API
-
-**Tools**
-- Workbox (PWA)
-- React Query (data fetching)
-- Zustand (state management)
-
-**Hosting**
-- Netlify
-- Cloudflare CDN
-
-## Open Source
-
-This project is open source and welcomes contributions!
-
-**License**: MIT  
-**GitHub**: [alexjohnson/weather-now](https://github.com/alexjohnson/weather-now)
-
-## Lessons Learned
-
-1. **PWAs are powerful**: Service workers enable app-like experiences on the web
-2. **Performance matters**: Users notice and appreciate fast apps
-3. **Caching strategy**: Critical for offline support and API cost management
-4. **Simplicity wins**: Started with core features, added more based on user feedback
-
-## Future Plans
-
-- [ ] Weather widgets for websites
-- [ ] Social features (share weather conditions)
-- [ ] Weather photography integration
-- [ ] Apple Watch & Android Wear apps
-- [ ] Premium features (ad-free, extended forecasts)
-
----
-
-**Status**: ✅ Live & Maintained  
-**Try it**: [weathernow-demo.netlify.app](https://weathernow-demo.netlify.app)  
-**GitHub**: [@alexjohnson/weather-now](https://github.com/alexjohnson/weather-now)
+Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.

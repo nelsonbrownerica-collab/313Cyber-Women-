@@ -1,170 +1,86 @@
 ---
-title: "TaskFlow - Project Management Tool"
-date: 2024-09-20
-summary: "Real-time collaborative task management application with drag-and-drop Kanban boards and team features"
+title: "Secure Task & Workflow Manager"
+date: 2026-11-25
+summary: "A task management app with user roles, project boards, due dates, audit history, and permission checks."
 tags:
-  - Full-Stack
-  - Next.js
-  - Real-Time
-  - Productivity
-tech_stack:
-  - Next.js
-  - TypeScript
-  - Prisma
-  - PostgreSQL
-  - WebSockets
-  - Tailwind CSS
-links:
-  - type: github
-    url: https://github.com/alexjohnson/taskflow
-    label: Code
-  - type: live
-    url: https://taskflow-demo.example.com
-    label: Demo
-featured: true
-status: "Live"
-role: "Solo Developer"
-duration: "2 months"
-team_size: 1
-highlights:
-  - "Real-time collaboration with WebSockets"
-  - "2000+ active users"
-  - "Featured on Product Hunt"
+  - "Full-Stack"
+  - "Security Tools"
+authors:
+  - me
+featured: false
+status: "Planned"
+role: "Independent project build"
+duration: "To be determined"
 ---
+## Build status
 
-A modern, intuitive task management tool built for remote teams. Features real-time collaboration, customizable workflows, and beautiful UI.
+**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
 
-## Overview
+## Project goal
 
-TaskFlow was born out of frustration with existing project management tools being either too complex or lacking essential features. I built a solution that's powerful yet simple to use.
+A task management app with user roles, project boards, due dates, audit history, and permission checks.
 
-## Key Features
+## What to build
 
-### Core Functionality
-- **Kanban Boards** - Drag-and-drop interface for visual task management
-- **Real-Time Sync** - See changes instantly as team members update tasks
-- **Multiple Views** - Switch between Kanban, List, and Calendar views
-- **Task Details** - Rich descriptions, attachments, comments, and checklists
-- **Labels & Filters** - Organize and find tasks quickly
+Build a responsive task board where demo users can create and update tasks within their assigned workspace.
 
-### Collaboration
-- **Team Workspaces** - Separate spaces for different projects/teams
-- **@Mentions** - Tag team members in comments for notifications
-- **Activity Feed** - Track all changes and updates
-- **Permissions** - Role-based access control (admin, member, viewer)
+## Suggested technology stack
 
-### Productivity
-- **Keyboard Shortcuts** - Power user features for faster navigation
-- **Templates** - Reusable board templates for common workflows
-- **Due Dates & Reminders** - Never miss a deadline
-- **Time Tracking** - Built-in timer for task duration tracking
+React, Node.js/Express, SQLite, CSS, GitHub Actions.
 
-## Technical Implementation
+Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
 
-### Real-Time Features
-Used WebSockets (Socket.io) for instant updates across all connected clients. Implemented optimistic UI updates for snappy user experience even before server confirmation.
+## Step-by-step build plan
 
-### Drag & Drop
-Built custom drag-and-drop using react-beautiful-dnd with smooth animations and mobile touch support.
+1. 1. Define roles: owner, editor, viewer. 2. Design users/projects/tasks schema. 3. Build sign-in simulation or local demo accounts. 4. Add task CRUD and status transitions. 5. Enforce authorization on the server for every operation. 6. Add audit events for task changes. 7. Build board and list views. 8. Test cross-user access denial and document results.
 
-### Performance
-- Implemented virtual scrolling for boards with 1000+ tasks
-- Optimized database queries with proper indexing
-- Used Redis for session storage and caching
-- Image optimization with Next.js Image component
+## Data model and interfaces
 
-### Authentication
-- Secure auth with NextAuth.js
-- Support for email/password and OAuth (Google, GitHub)
-- JWT tokens with automatic refresh
+Users, workspaces, memberships, tasks, audit_events. API: GET/POST /api/tasks, PATCH /api/tasks/:id, GET /api/audit-events.
 
-## Architecture
+## Acceptance criteria
 
-Built as a modern monolith with Next.js API routes:
+- [ ] Viewer cannot edit
+- [ ] user cannot access another workspace
+- [ ] required fields validated
+- [ ] audit history records changes.
 
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Next.js    │────▶│   API Routes │────▶│ PostgreSQL  │
-│  (React)    │     │  (REST/WS)   │     │  + Prisma   │
-└─────────────┘     └──────────────┘     └─────────────┘
-       │                    │
-       │             ┌──────▼───────┐
-       └────────────▶│  Socket.io   │
-                     │  (Real-Time) │
-                     └──────────────┘
+## Evidence to save
+
+- [ ] Role matrix
+- [ ] screenshots
+- [ ] API tests
+- [ ] sample audit log
+- [ ] architecture notes
+- [ ] README.
+
+## Suggested repository structure
+
+```text
+task-manager/
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── test-plan.md
+│   └── screenshots/
+├── src/
+├── tests/
+└── sample-data/
 ```
 
-## Challenges Solved
+Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
 
-### Real-Time Conflicts
-**Problem**: Multiple users editing same task simultaneously
+## Final README checklist
 
-**Solution**: Implemented operational transformation (OT) for conflict resolution and last-write-wins strategy with conflict notifications
+- [ ] Explain the problem and intended users.
+- [ ] List the features actually implemented.
+- [ ] Document setup and run commands that have been tested.
+- [ ] Describe architecture and important design decisions.
+- [ ] Include screenshots or a short demo of your own application.
+- [ ] Include automated test results and known limitations.
+- [ ] Add a security and privacy section.
+- [ ] Link to a live demo only if it genuinely exists.
 
-### Mobile Performance
-**Problem**: Drag-and-drop laggy on mobile devices
+## Definition of done
 
-**Solution**: Optimized touch handlers and reduced re-renders using React.memo and useMemo
-
-### Scale
-**Problem**: Growing user base causing performance issues
-
-**Solution**: Added Redis caching layer and optimized database queries, reducing response time by 65%
-
-## Results
-
-- 📈 **Users**: 2000+ active users within 3 months
-- ⭐ **Product Hunt**: Featured and received 200+ upvotes
-- 🚀 **Performance**: Sub-100ms API response times
-- 💯 **Uptime**: 99.8% uptime since launch
-- 📱 **Mobile**: 40% of traffic from mobile devices
-
-## Tech Stack
-
-**Frontend**
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Framer Motion (animations)
-- React Beautiful DnD
-
-**Backend**
-- Next.js API Routes
-- Prisma ORM
-- PostgreSQL
-- Socket.io for WebSockets
-- NextAuth.js for authentication
-
-**Infrastructure**
-- Vercel for hosting
-- Supabase for PostgreSQL
-- Redis Cloud for caching
-- AWS S3 for file storage
-
-## User Feedback
-
-> "Finally, a task manager that doesn't get in my way. The real-time updates are magical!" - Sarah K., Product Manager
-
-> "We switched from Trello and haven't looked back. TaskFlow is faster and more intuitive." - Mike R., Engineering Lead
-
-## Open Source
-
-TaskFlow is open source! Contributions welcome.
-
-**License**: MIT  
-**GitHub**: [alexjohnson/taskflow](https://github.com/alexjohnson/taskflow)  
-**Demo**: [Try it live](https://taskflow-demo.example.com)
-
-## What's Next
-
-Currently working on:
-- [ ] Mobile apps (iOS & Android)
-- [ ] Gantt chart view
-- [ ] Advanced reporting and analytics
-- [ ] API for third-party integrations
-- [ ] Offline mode support
-
----
-
-**Status**: ✅ Live & Actively Maintained  
-**Try it**: [taskflow-demo.example.com](https://taskflow-demo.example.com)
+Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
