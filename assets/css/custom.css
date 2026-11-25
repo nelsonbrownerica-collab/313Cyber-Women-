@@ -1,63 +1,22 @@
-/* 313 Cyber Women — dark navy, white and electric-blue developer portfolio */
-:root {
-  --cw-blue: #1677ff;
-  --cw-cyan: #22a7ff;
-  --cw-ink: #030712;
-  --cw-panel: #081426;
-  --cw-line: rgba(65, 157, 255, .28);
-}
-html.dark body {
-  background:
-    radial-gradient(ellipse at 12% 12%, rgba(0, 92, 220, .18), transparent 34rem),
-    radial-gradient(ellipse at 88% 18%, rgba(0, 153, 255, .10), transparent 30rem),
-    #030712;
-  color: #f8fafc;
-}
-html.dark header, html.dark .navbar, html.dark nav {
-  background: rgba(2, 6, 15, .94);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(59, 130, 246, .18);
-}
-html.dark a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
-html.dark a:hover { color: #60a5fa; }
-html.dark .card, html.dark article {
-  background: linear-gradient(145deg, rgba(12, 27, 48, .96), rgba(4, 11, 23, .98));
-  border: 1px solid var(--cw-line);
-  border-radius: .8rem;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, .28);
-}
-html.dark .card:hover, html.dark article:hover {
-  border-color: rgba(34, 167, 255, .72);
-  box-shadow: 0 18px 44px rgba(0, 100, 255, .16);
-  transform: translateY(-3px);
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-html.dark .btn-primary, html.dark a.button {
-  color: white;
-  background: linear-gradient(110deg, #075ce5, #087fce);
-  border: 1px solid rgba(96, 165, 250, .65);
-  border-radius: .45rem;
-  box-shadow: 0 6px 22px rgba(0, 94, 255, .18);
-}
-html.dark .btn-primary:hover, html.dark a.button:hover { filter: brightness(1.13); }
-html.dark h1, html.dark h2, html.dark h3 {
-  color: #f8fafc;
-  letter-spacing: -.025em;
-}
-html.dark .prose a { color: #60a5fa; }
-html.dark .prose, html.dark article .prose { color: #d7e1ef; }
-html.dark .badge, html.dark .tag { border: 1px solid rgba(59, 130, 246, .25); }
-html.dark img { border-radius: .6rem; }
-html.dark .avatar img { border: 2px solid #1684ff; box-shadow: 0 0 28px rgba(0, 119, 255, .22); }
-html.dark main { min-height: 70vh; }
-@media (min-width: 1024px) {
-  html.dark .prose { max-width: 78ch; }
-  html.dark .article-container { max-width: 1180px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-  }
-}
+/* 313 Cyber Women — black, navy, white and electric-blue visual system */
+:root{--cw-blue:#087bff;--cw-cyan:#16baff;--cw-ink:#020711;--cw-panel:#071426;--cw-line:rgba(36,155,255,.34)}
+html.dark body{background:radial-gradient(ellipse at 10% 12%,rgba(0,95,255,.16),transparent 34rem),radial-gradient(ellipse at 90% 16%,rgba(0,153,255,.12),transparent 30rem),#020711;color:#f8fafc}
+html.dark header,html.dark .navbar,html.dark nav{background:rgba(2,6,15,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(59,130,246,.25)}
+html.dark a{text-decoration-thickness:1px;text-underline-offset:4px}
+html.dark a:hover{color:#60b8ff}
+html.dark .card,html.dark article{background:linear-gradient(145deg,rgba(8,25,47,.97),rgba(3,10,22,.99));border:1px solid var(--cw-line);border-radius:.75rem;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+html.dark .card:hover,html.dark article:hover{border-color:rgba(34,167,255,.78);box-shadow:0 18px 44px rgba(0,100,255,.18);transform:translateY(-3px);transition:all .2s ease}
+html.dark .btn-primary,html.dark a.button{color:#fff;background:linear-gradient(110deg,#075ce5,#087fce);border:1px solid rgba(96,165,250,.7);border-radius:.4rem;box-shadow:0 6px 22px rgba(0,94,255,.2)}
+html.dark h1,html.dark h2,html.dark h3{color:#f8fafc;letter-spacing:-.025em}
+html.dark .prose a{color:#60a5fa}
+html.dark .prose{color:#d7e1ef}
+html.dark .avatar img,html.dark img.avatar{border:2px solid #1684ff;box-shadow:0 0 30px rgba(0,119,255,.3);object-fit:cover;object-position:center 28%}
+html.dark .lab-meta{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0;padding:.85rem 1rem;border:1px solid rgba(25,155,255,.38);border-radius:.65rem;background:linear-gradient(100deg,rgba(0,94,255,.13),rgba(4,17,34,.8));color:#dceeff}
+html.dark .lab-meta span:first-child{color:#40b8ff;font-weight:700}
+html.dark .lab-meta span{padding:.25rem .55rem;border-radius:999px;background:rgba(12,44,78,.75);font-size:.82rem}
+html.dark .prose h2,html.dark .prose h3{color:#32baff}
+html.dark .prose pre{border:1px solid rgba(35,145,255,.3);border-radius:.6rem}
+html.dark .prose blockquote{border-left-color:#1684ff;background:rgba(4,30,60,.45);padding:.8rem 1rem;border-radius:0 .5rem .5rem 0}
+html.dark main{min-height:70vh}
+@media(min-width:1024px){html.dark .prose{max-width:82ch}html.dark .article-container{max-width:1180px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
