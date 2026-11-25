@@ -1,85 +1,149 @@
 ---
-title: "API-Driven Dashboard & Status App"
+title: "API-Driven Dashboard"
 date: 2026-11-25
-summary: "A clean dashboard that consumes a public or mocked API, handles loading/error states, caches responses, and protects configuration."
+summary: "Build a responsive dashboard demonstrating API requests, loading states, error handling and data visualization. Begin with local mock JSON."
 tags:
-  - "Frontend/API"
-  - "Security Tools"
+  - "APIs & Integrations"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "6–12 hours"
 ---
-## Build status
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+<div class="lab-meta"><span>● PLANNED</span><span>Beginner</span><span>6–12 hours</span></div>
 
-## Project goal
+> **Status:** This is a guided build plan, not a claim that the application is implemented. Update status only after you complete the work and save evidence.
 
-A clean dashboard that consumes a public or mocked API, handles loading/error states, caches responses, and protects configuration.
+## Project overview
 
-## What to build
+Build a responsive dashboard demonstrating API requests, loading states, error handling and data visualization. Begin with local mock JSON.
 
-Build a reusable dashboard interface that can display current status cards and a short forecast from a safe public API or local fixture.
+**Suggested tools:** HTML, CSS, JavaScript, fetch API, optional public API
 
-## Suggested technology stack
+## Learning objectives
 
-JavaScript or React, HTML, CSS, Fetch API, optional local JSON fixtures.
+- Plan a small application and explain its architecture.
+- Build and validate its main workflow.
+- Test normal, invalid and edge-case behavior.
+- Document security, privacy, accessibility and limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+Use fictional sample data. Work only in a dedicated project folder and on systems you own. Keep passwords, tokens and API keys out of source control. Start with the smallest local setup that works on your computer.
 
-1. 1. Design responsive dashboard layout. 2. Create fixture data before using any external API. 3. Build reusable status cards. 4. Add loading, empty, and error states. 5. Add search and units/preferences. 6. Add caching and request throttling. 7. Keep API keys out of source control if an API key is required. 8. Test keyboard navigation and mobile layout.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the runtime and editor listed above.
+2. Create a GitHub repository for this project.
+3. Clone it locally and open the folder in your editor.
+4. Add a README, .gitignore, and folders for source code, tests, sample data and docs.
+5. Record tool versions in the README.
+6. Run a minimal starter app and confirm it works before adding features.
 
-Frontend modules for data service, status cards, search, settings. Optional endpoint: GET /api/status?location=...
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1: Set up the workspace
 
-- [ ] Works with fixture data offline
-- [ ] gracefully handles API failure
-- [ ] no secret in browser bundle or Git history
-- [ ] responsive and keyboard accessible.
+Create index.html, styles.css, app.js and data/sample-weather.json.
 
-## Evidence to save
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 2: Plan the workflow
 
-- [ ] Desktop/mobile screenshots
-- [ ] fixture dataset
-- [ ] API contract
-- [ ] accessibility checklist
-- [ ] performance notes.
+Sketch current conditions, hourly summary and multi-day view with accessible labels and responsive cards.
 
-## Suggested repository structure
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 3: Build the core feature
 
-```text
-weather-app/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+Load local JSON and render the same structure an API would return so the project works offline.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 4: Add validation and safety
 
-## Final README checklist
+Write a fetch function using async/await, check response status and parse JSON safely.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 5: Test the implementation
+
+Add loading, error and retry states. Do not show raw stack traces.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 6: Document and capture evidence
+
+Validate location input with trimming and length limits; show clear errors for unsupported values.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 7: Document and capture evidence
+
+Add Celsius/Fahrenheit units and format dates with browser APIs.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 8: Document and capture evidence
+
+Render a temperature trend with accessible text labels; do not rely on color alone.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 9: Document and capture evidence
+
+Cache the last successful response briefly and indicate when cached data is displayed.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 10: Document and capture evidence
+
+Test offline mode, malformed JSON, non-200 responses, missing fields and empty input.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 11: Document and capture evidence
+
+Check keyboard navigation, contrast, responsive cards and screen-reader labels.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+### Step 12: Document and capture evidence
+
+Document mock mode, optional API configuration, key handling, screenshots, tests and data-source attribution.
+
+**Checkpoint:** Save a note or screenshot showing this step works.
+
+## Testing checklist
+
+- [ ] App starts using documented commands.
+- [ ] Main workflow works with fictional sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout are checked.
+- [ ] Automated tests pass or manual results are documented.
+- [ ] Dependencies and configuration are reviewed.
+
+## Evidence checklist
+
+- [ ] GitHub repository with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Setup and run output.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input/output using fictional data.
+- [ ] README with setup, features, limitations and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. README with tested setup instructions.
+3. Tests and results.
+4. Screenshots or a short demo.
+5. Architecture notes and known limitations.
+6. A reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime command not found:** reopen terminal and verify the runtime version.
+- **Dependency installation fails:** check runtime version and install only required packages.
+- **App will not start:** read the first error, verify file paths and ports, then fix one issue at a time.
+- **API errors:** inspect status and sanitized response; verify request format and required fields.
+- **Tests fail:** reproduce one failure, compare expected and actual values, then rerun the suite.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when implementation begins. Mark **Completed** only after the working app, tests, screenshots, documentation and limitations are committed. A plan or mockup alone is not completion evidence.
