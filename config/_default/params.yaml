@@ -11,14 +11,14 @@ hugoblox:
     mode: dark
     pack: "default"
     colors:
-      primary: "#8B5CF6"
-      secondary: "#14B8A6"
-      neutral: ""
+      primary: "#2563EB"
+      secondary: "#38BDF8"
+      neutral: "#111827"
     colors_light: {}
     colors_dark: {}
     surfaces:
-      background: ""
-      foreground: ""
+      background: "#050B16"
+      foreground: "#F8FAFC"
       header:
         background: ""
         foreground: ""
@@ -45,7 +45,7 @@ hugoblox:
       text: "Explore Projects"
       url: "/#projects"
   footer:
-    style: centered
+    style: minimal
     language_switcher: false
     text: "313 Cyber Women · Software Development Portfolio"
   copyright:
