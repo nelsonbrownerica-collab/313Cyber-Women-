@@ -1,87 +1,171 @@
 ---
 title: "Secure REST API Playground"
 date: 2026-11-25
-summary: "A small local API that demonstrates validation, authentication concepts, authorization checks, safe errors, and automated tests."
+summary: "Build a small API with validation, authentication concepts, safe error handling, and automated tests. Run locally with synthetic data."
 tags:
-  - "Full-Stack"
-  - "Security Tools"
+  - "APIs & Integrations"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "12–20 hours"
 ---
-## Build status
+<div class="lab-hero">
+  <span class="lab-status">● PLANNED BUILD</span>
+  <span class="lab-level">Intermediate</span>
+  <span class="lab-duration">12–20 hours</span>
+</div>
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
 
-## Project goal
+## Project overview
 
-A small local API that demonstrates validation, authentication concepts, authorization checks, safe errors, and automated tests.
+Build a small API with validation, authentication concepts, safe error handling, and automated tests. Run locally with synthetic data.
 
-## What to build
+**Suggested stack:** Python FastAPI or Node.js Express, SQLite, pytest
 
-Build a demo API for notes or tasks with deliberately scoped local accounts and no real user data.
+## Learning objectives
 
-## Suggested technology stack
+By completing this lab, you should be able to:
 
-Node.js/Express or Python/FastAPI, SQLite, pytest or Jest/Supertest.
+- Plan a small application and explain its architecture.
+- Build and validate the core workflow.
+- Test normal, invalid, and edge-case behavior.
+- Document security, privacy, accessibility, and known limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+- Use fictional sample data and accounts.
+- Keep API keys and passwords out of source control.
+- Work in a dedicated project folder; do not test against systems or data you do not own.
+- Commit small changes so you can recover if something breaks.
+- If your computer is low on storage, use the simplest stack and local files first.
 
-1. 1. Create local project and API skeleton. 2. Define notes/tasks schema. 3. Add request validation. 4. Implement demo authentication using seeded test accounts. 5. Enforce owner checks on object access. 6. Add safe error handling and request logging. 7. Add rate-limit middleware or document the design. 8. Write positive and negative API tests. 9. Document secure configuration and limitations.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the current stable version of the language/runtime listed above.
+2. Install Visual Studio Code or another editor you already use.
+3. Create a new GitHub repository for this project.
+4. Clone it to your computer and open the folder in your editor.
+5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
+6. Record the versions of your tools in the README.
+7. Run a minimal “hello world” or starter app and save the successful output before adding features.
 
-GET/POST /api/items, GET/PATCH/DELETE /api/items/:id, GET /health. Use only seeded local demo accounts.
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1. Choose the stack
 
-- [ ] Unauthenticated request rejected
-- [ ] user A cannot read user B's item
-- [ ] invalid input rejected
-- [ ] errors do not expose stack traces
-- [ ] secrets excluded.
+Choose either FastAPI with Pydantic or Express with a validation library. Keep the first version local.
 
-## Evidence to save
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-- [ ] OpenAPI spec
-- [ ] curl/Postman examples
-- [ ] test output
-- [ ] screenshots
-- [ ] threat notes
-- [ ] README.
+### Step 2. Define resources
 
-## Suggested repository structure
+Model a simple notes or inventory resource with ID, title, body, owner, and timestamps.
 
-```text
-secure-api-playground/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+### Step 3. Create CRUD endpoints
 
-## Final README checklist
+Implement list, read, create, update, and delete routes. Return consistent status codes and JSON.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 4. Validate input
+
+Set field types, length limits, allowed values, and request-size limits. Reject unexpected or malformed input.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 5. Use parameterized database access
+
+Create SQLite tables and use bound parameters. Do not concatenate user input into SQL.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 6. Add authentication safely
+
+Use a local test token or maintained auth library. Store secrets in environment variables and never log tokens.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 7. Enforce authorization
+
+Check that a user can only read or modify resources they own unless an administrator role is explicitly allowed.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 8. Add rate-limit and CORS configuration
+
+Use a conservative local development policy and document production settings separately.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 9. Harden error handling
+
+Return generic client errors while keeping sanitized diagnostic logs. Do not expose stack traces or secrets.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 10. Test security cases
+
+Test invalid JSON, oversized fields, unauthorized access, IDOR-style ownership checks, and SQL injection-shaped text as inert input.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 11. Document the API
+
+Add OpenAPI screenshots or schema, sample requests, test output, and a data-flow diagram.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 12. Review and publish
+
+Run dependency checks, inspect secrets, capture evidence, and document that this is a local learning API.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+
+## Testing checklist
+
+- [ ] The application starts using the documented command.
+- [ ] The main user workflow works with sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors are understandable and do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout have been checked.
+- [ ] Automated tests pass, or manual test results are documented.
+- [ ] Dependencies and configuration have been reviewed.
+
+## Evidence checklist
+
+- [ ] Repository link with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Screenshot or text output of setup and run commands.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input and output using fictional data.
+- [ ] README with setup, features, limitations, and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. A complete README with tested setup instructions.
+3. Tests and test results.
+4. Screenshots or a short demonstration.
+5. Architecture notes and known limitations.
+6. A brief reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
+- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
+- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
+- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
+- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
