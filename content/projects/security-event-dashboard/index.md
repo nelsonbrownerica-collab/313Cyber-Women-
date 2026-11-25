@@ -1,86 +1,171 @@
 ---
 title: "Security Event Dashboard"
 date: 2026-11-25
-summary: "A lightweight dashboard that imports synthetic security events and displays event counts, severity, timelines, and filters."
+summary: "Create a dashboard that imports synthetic security events, normalizes fields, filters events, and visualizes trends. Use generated or public sample logs only; do not upload employer or personal logs."
 tags:
-  - "Python"
   - "Security Tools"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "18–28 hours"
 ---
-## Build status
+<div class="lab-hero">
+  <span class="lab-status">● PLANNED BUILD</span>
+  <span class="lab-level">Intermediate</span>
+  <span class="lab-duration">18–28 hours</span>
+</div>
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
 
-## Project goal
+## Project overview
 
-A lightweight dashboard that imports synthetic security events and displays event counts, severity, timelines, and filters.
+Create a dashboard that imports synthetic security events, normalizes fields, filters events, and visualizes trends. Use generated or public sample logs only; do not upload employer or personal logs.
 
-## What to build
+**Suggested stack:** Python, Flask, SQLite, Chart.js, CSV/JSON
 
-Build an offline dashboard for sample authentication and endpoint events; no real organization logs are needed.
+## Learning objectives
 
-## Suggested technology stack
+By completing this lab, you should be able to:
 
-Python, CSV/JSON, SQLite, Streamlit or Flask, Plotly (optional).
+- Plan a small application and explain its architecture.
+- Build and validate the core workflow.
+- Test normal, invalid, and edge-case behavior.
+- Document security, privacy, accessibility, and known limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+- Use fictional sample data and accounts.
+- Keep API keys and passwords out of source control.
+- Work in a dedicated project folder; do not test against systems or data you do not own.
+- Commit small changes so you can recover if something breaks.
+- If your computer is low on storage, use the simplest stack and local files first.
 
-1. 1. Create synthetic CSV fields: timestamp, user, host, event_type, result, source. 2. Validate and normalize records. 3. Store data in SQLite or load read-only. 4. Calculate event totals and failed-login trends. 5. Add date, user, and severity filters. 6. Display a timeline and top categories. 7. Add malformed-row handling. 8. Export a sanitized summary report.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the current stable version of the language/runtime listed above.
+2. Install Visual Studio Code or another editor you already use.
+3. Create a new GitHub repository for this project.
+4. Clone it to your computer and open the folder in your editor.
+5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
+6. Record the versions of your tools in the README.
+7. Run a minimal “hello world” or starter app and save the successful output before adding features.
 
-Tables: events, users (synthetic). Views: totals, event trend, filtered event table. Optional endpoint: GET /api/events.
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1. Prepare the lab
 
-- [ ] Dashboard works from sample data
-- [ ] malformed rows reported
-- [ ] filters match query results
-- [ ] no personal or employer data.
+Create a Python virtual environment and install Flask, pandas, and a database library. Create sample-data, app, tests, and docs folders.
 
-## Evidence to save
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-- [ ] Synthetic CSV
-- [ ] dashboard screenshots
-- [ ] SQL/schema
-- [ ] test cases
-- [ ] exported report
-- [ ] README.
+### Step 2. Generate safe sample events
 
-## Suggested repository structure
+Create a small CSV/JSON dataset with fictional timestamps, usernames, event types, source IPs from documentation ranges, and severities.
 
-```text
-security-event-dashboard/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+### Step 3. Define a normalized schema
 
-## Final README checklist
+Map source fields into timestamp, event_id, user, source_ip, event_type, severity, and summary. Document missing or malformed values.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 4. Build the importer
+
+Parse CSV and JSON, validate required fields, normalize timestamps to UTC, and reject malformed rows with a report.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 5. Store events locally
+
+Use SQLite with indexes on timestamp, severity, and event type. Use parameterized queries.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 6. Create the Flask routes
+
+Add a dashboard route and API endpoints for event counts, severity summaries, and filtered events.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 7. Build the dashboard
+
+Use Chart.js to show event volume over time, severity distribution, and top event types.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 8. Add filters
+
+Allow date range, severity, event type, and user filters. Validate date ranges and limit result counts.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 9. Add drill-down details
+
+Click an event to see normalized fields and the original sample row. Escape displayed values.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 10. Add detection rules
+
+Create simple documented rules such as repeated failed logins in a short window. Mark them as educational examples, not production detections.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 11. Test the pipeline
+
+Test valid imports, bad timestamps, missing fields, duplicate event IDs, empty data, and filter combinations.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 12. Capture evidence
+
+Save a sample dataset, schema diagram, importer report, dashboard screenshots, test output, and README. State clearly that all records are synthetic.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+
+## Testing checklist
+
+- [ ] The application starts using the documented command.
+- [ ] The main user workflow works with sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors are understandable and do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout have been checked.
+- [ ] Automated tests pass, or manual test results are documented.
+- [ ] Dependencies and configuration have been reviewed.
+
+## Evidence checklist
+
+- [ ] Repository link with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Screenshot or text output of setup and run commands.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input and output using fictional data.
+- [ ] README with setup, features, limitations, and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. A complete README with tested setup instructions.
+3. Tests and test results.
+4. Screenshots or a short demonstration.
+5. Architecture notes and known limitations.
+6. A brief reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
+- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
+- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
+- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
+- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
