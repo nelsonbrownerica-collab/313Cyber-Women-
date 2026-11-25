@@ -1,86 +1,171 @@
 ---
-title: "Threat Intelligence Indicator Explorer"
+title: "Threat Intelligence Explorer"
 date: 2026-11-25
-summary: "An offline explorer for fictional threat indicators and their relationships to reports, campaigns, and defensive recommendations."
+summary: "Create a read-only explorer for curated public threat-intelligence indicators and relationships. Use synthetic indicators or reputable public feeds; do not probe or contact listed infrastructure."
 tags:
-  - "Python"
   - "Security Tools"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "16–26 hours"
 ---
-## Build status
+<div class="lab-hero">
+  <span class="lab-status">● PLANNED BUILD</span>
+  <span class="lab-level">Advanced</span>
+  <span class="lab-duration">16–26 hours</span>
+</div>
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
 
-## Project goal
+## Project overview
 
-An offline explorer for fictional threat indicators and their relationships to reports, campaigns, and defensive recommendations.
+Create a read-only explorer for curated public threat-intelligence indicators and relationships. Use synthetic indicators or reputable public feeds; do not probe or contact listed infrastructure.
 
-## What to build
+**Suggested stack:** Python, Flask, SQLite, STIX/TAXII concepts, OpenCTI concepts
 
-Build a searchable local catalog of defanged indicators using synthetic data; focus on data modeling and provenance.
+## Learning objectives
 
-## Suggested technology stack
+By completing this lab, you should be able to:
 
-Python, JSON, SQLite, Streamlit or Flask.
+- Plan a small application and explain its architecture.
+- Build and validate the core workflow.
+- Test normal, invalid, and edge-case behavior.
+- Document security, privacy, accessibility, and known limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+- Use fictional sample data and accounts.
+- Keep API keys and passwords out of source control.
+- Work in a dedicated project folder; do not test against systems or data you do not own.
+- Commit small changes so you can recover if something breaks.
+- If your computer is low on storage, use the simplest stack and local files first.
 
-1. 1. Create synthetic indicators with defanged domains/IPs/hashes. 2. Add source, first_seen, last_seen, confidence, and context. 3. Store records in SQLite. 4. Build search and filters. 5. Link indicators to fictional reports and behaviors. 6. Add confidence and expiry labels. 7. Export a sanitized intelligence brief. 8. Test duplicate handling and stale indicator warnings.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the current stable version of the language/runtime listed above.
+2. Install Visual Studio Code or another editor you already use.
+3. Create a new GitHub repository for this project.
+4. Clone it to your computer and open the folder in your editor.
+5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
+6. Record the versions of your tools in the README.
+7. Run a minimal “hello world” or starter app and save the successful output before adding features.
 
-Indicators, reports, relationships tables. Indicator values remain defanged text and are never resolved or contacted.
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1. Set the scope and safety rules
 
-- [ ] Provenance visible
-- [ ] duplicate records handled
-- [ ] expired items flagged
-- [ ] no outbound indicator lookup or automatic blocking.
+Build a read-only research tool. Never scan, ping, browse to, or otherwise interact with indicators. Use defanged values in screenshots and reports.
 
-## Evidence to save
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-- [ ] Data dictionary
-- [ ] screenshots
-- [ ] synthetic dataset
-- [ ] export sample
-- [ ] tests
-- [ ] README.
+### Step 2. Learn the data model
 
-## Suggested repository structure
+Review STIX concepts: indicator, malware, threat actor, campaign, relationship, and report. Document the fields you plan to support.
 
-```text
-threat-intel-explorer/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+### Step 3. Create sample intelligence
 
-## Final README checklist
+Use synthetic indicators such as `hxxps://example[.]invalid/path` and reserved documentation IP ranges. Label all data as sample.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 4. Design the database
+
+Create tables for indicators, sources, sightings, tags, and relationships. Track source and confidence.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 5. Build an import parser
+
+Import a small JSON file and validate indicator type, value, source, confidence, and first/last seen dates.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 6. Normalize and defang
+
+Normalize domain and URL strings for display. Keep potentially dangerous indicators defanged and never make them clickable.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 7. Build search and filters
+
+Search by indicator type, source, tag, confidence, and date. Limit result sizes.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 8. Create relationship views
+
+Show how a fictional campaign connects to infrastructure and malware records. Clearly distinguish sourced facts from analyst hypotheses.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 9. Add provenance
+
+Every record must show source, retrieval date, confidence, and handling notes.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 10. Add analyst notes
+
+Allow local notes and tags. Do not present unverified attribution as fact.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 11. Test safety controls
+
+Verify that indicators are not clickable, no network lookups occur, and malformed imports are rejected.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 12. Publish an intelligence brief
+
+Save a relationship diagram, sample dataset, source log, screenshots, tests, and a one-page assessment with confidence caveats.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+
+## Testing checklist
+
+- [ ] The application starts using the documented command.
+- [ ] The main user workflow works with sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors are understandable and do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout have been checked.
+- [ ] Automated tests pass, or manual test results are documented.
+- [ ] Dependencies and configuration have been reviewed.
+
+## Evidence checklist
+
+- [ ] Repository link with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Screenshot or text output of setup and run commands.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input and output using fictional data.
+- [ ] README with setup, features, limitations, and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. A complete README with tested setup instructions.
+3. Tests and test results.
+4. Screenshots or a short demonstration.
+5. Architecture notes and known limitations.
+6. A brief reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
+- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
+- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
+- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
+- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
