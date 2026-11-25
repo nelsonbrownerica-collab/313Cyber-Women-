@@ -1,6 +1,6 @@
 ---
 title: ""
-summary: "Software development portfolio featuring practical, security-aware applications and guided build projects."
+summary: "Erica Nelson's software development portfolio: practical applications, Python automation, secure APIs, and AI-assisted tools."
 date: 2026-11-25
 type: landing
 
@@ -9,16 +9,16 @@ sections:
     id: hero
     content:
       username: me
-      greeting: "Hi, I'm"
-      show_status: true
+      greeting: "Hello, I'm"
+      show_status: false
       show_scroll_indicator: true
       typewriter:
         enable: true
-        prefix: "I build"
+        prefix: "I develop"
         strings:
-          - "practical software tools"
-          - "security-aware web applications"
-          - "Python and data projects"
+          - "security-minded software"
+          - "Python automation tools"
+          - "web applications and APIs"
           - "AI-assisted workflows"
         type_speed: 65
         delete_speed: 35
@@ -27,25 +27,25 @@ sections:
         - text: Explore My Projects
           url: "#projects"
           icon: arrow-down
-        - text: Open the Build Guides
-          url: "/projects/"
-          icon: code
+        - text: View Source Code
+          url: "https://github.com/nelsonbrownerica-collab"
+          icon: brands/github
     design:
       style: centered
       avatar_shape: circle
       animations: true
       background:
         color:
-          light: "#fafafa"
-          dark: "#0a0a0f"
+          light: "#F8FAFC"
+          dark: "#050B16"
       spacing:
         padding: ["6rem", "0", "4rem", "0"]
 
   - block: portfolio
     id: projects
     content:
-      title: "Cybersecurity Software Projects"
-      subtitle: "Eleven software builds designed to develop practical application-development skills through security-minded tools."
+      title: "Selected Software Projects"
+      subtitle: "Practical builds focused on application development, secure-by-design thinking, automation, and AI. Each project page explains the build plan and current status."
       count: 11
       filters:
         folders:
@@ -53,12 +53,12 @@ sections:
       buttons:
         - name: All Projects
           tag: "*"
-        - name: Security Tools
-          tag: Security Tools
         - name: Full-Stack
           tag: Full-Stack
         - name: Python
           tag: Python
+        - name: Security Tools
+          tag: Security Tools
         - name: AI
           tag: AI
       default_button_index: 0
@@ -66,18 +66,18 @@ sections:
       columns: 3
       background:
         color:
-          light: "#ffffff"
-          dark: "#0d0d12"
+          light: "#FFFFFF"
+          dark: "#071426"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 
   - block: tech-stack
     id: skills
     content:
-      title: "Development Toolkit"
-      subtitle: "Technologies used or being explored across the project builds—not a claim that every tool is already mastered."
+      title: "Technologies & Development Workflow"
+      subtitle: "Tools selected for the projects in this portfolio. Project pages identify what is planned and what has actually been implemented."
       categories:
-        - name: Languages & Data
+        - name: Programming & Data
           items:
             - name: Python
               icon: devicon/python
@@ -85,7 +85,7 @@ sections:
               icon: devicon/javascript
             - name: SQL
               icon: devicon/mysql
-        - name: Web Development
+        - name: Web & APIs
           items:
             - name: HTML5
               icon: devicon/html5
@@ -95,7 +95,7 @@ sections:
               icon: devicon/react
             - name: Node.js
               icon: devicon/nodejs
-        - name: Tools & Workflow
+        - name: Developer Tools
           items:
             - name: GitHub
               icon: brands/github
@@ -110,49 +110,49 @@ sections:
       show_levels: false
       background:
         color:
-          light: "#f5f5f5"
-          dark: "#08080c"
+          light: "#F1F5F9"
+          dark: "#050B16"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 
   - block: cta-card
     id: about
     content:
-      title: "A developer portfolio built around real progress"
+      title: "How I approach building software"
       text: |
-        313 Cyber Women is my software development portfolio. The projects here are build plans and learning challenges until I complete them, test them, and publish my own evidence.
+        I focus on practical applications with clear user needs, thoughtful architecture, input validation, access controls, useful tests, and readable documentation.
 
-        My approach is to build in small steps, explain the decisions, test the important paths, document what works, and keep improving the code.
+        My process is to define the problem, build in manageable steps, test expected and unexpected behavior, document technical decisions, and improve the result. This portfolio is a transparent record of that work—not a list of skills or products I haven't demonstrated.
       button:
         text: Browse All Build Guides
         url: "/projects/"
         new_tab: false
     design:
       card:
-        css_class: "bg-gradient-to-br from-primary-200 via-primary-100 to-secondary-200 dark:from-primary-600 dark:via-primary-700 dark:to-secondary-700"
+        css_class: "bg-gradient-to-br from-blue-100 via-slate-100 to-cyan-100 dark:from-blue-950 dark:via-slate-900 dark:to-cyan-950"
         text_color: dark
       background:
         color:
-          light: "#f5f5f5"
-          dark: "#08080c"
+          light: "#F1F5F9"
+          dark: "#071426"
       spacing:
         padding: ["4rem", "0", "5rem", "0"]
 
   - block: contact-info
     id: contact
     content:
-      title: "Connect & Collaborate"
-      subtitle: "Follow the code and project progress"
+      title: "Connect"
+      subtitle: "Explore the code and follow project progress"
       text: |
-        Interested in a project or want to follow the development process? Visit my GitHub profile to explore the repositories and updates.
+        For project details and source code, visit my GitHub profile. Each completed project will include its own repository, documentation, tests, and supporting evidence.
       email: ""
       autolink: false
     design:
       columns: "1"
       background:
         color:
-          light: "#ffffff"
-          dark: "#0d0d12"
+          light: "#FFFFFF"
+          dark: "#050B16"
       spacing:
         padding: ["4rem", "0", "4rem", "0"]
 ---
