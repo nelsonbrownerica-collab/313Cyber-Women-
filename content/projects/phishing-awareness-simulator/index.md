@@ -1,7 +1,7 @@
 ---
 title: "Phishing Awareness Simulator"
 date: 2026-11-25
-summary: "Create a local educational quiz that teaches users to spot suspicious messages. It does not send emails, collect credentials, track real users, or imitate a real organization."
+summary: "Create a local educational quiz that teaches people to identify suspicious messages. It does not send emails, collect credentials or track real users."
 tags:
   - "Security Tools"
   - "Guided Lab"
@@ -12,160 +12,138 @@ status: "Planned"
 role: "Independent guided build"
 duration: "8–14 hours"
 ---
-<div class="lab-hero">
-  <span class="lab-status">● PLANNED BUILD</span>
-  <span class="lab-level">Beginner</span>
-  <span class="lab-duration">8–14 hours</span>
-</div>
 
-> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
+<div class="lab-meta"><span>● PLANNED</span><span>Beginner</span><span>8–14 hours</span></div>
+
+> **Status:** This is a guided build plan, not a claim that the application is implemented. Update the status only after you complete the work and save evidence.
 
 ## Project overview
 
-Create a local educational quiz that teaches users to spot suspicious messages. It does not send emails, collect credentials, track real users, or imitate a real organization.
+Create a local educational quiz that teaches people to identify suspicious messages. It does not send emails, collect credentials or track real users.
 
-**Suggested stack:** HTML, CSS, JavaScript, local JSON
+**Suggested tools:** HTML, CSS, JavaScript, local JSON
 
 ## Learning objectives
 
-By completing this lab, you should be able to:
-
 - Plan a small application and explain its architecture.
-- Build and validate the core workflow.
-- Test normal, invalid, and edge-case behavior.
-- Document security, privacy, accessibility, and known limitations.
+- Build and validate its main workflow.
+- Test normal, invalid and edge-case behavior.
+- Document security, privacy, accessibility and limitations.
 - Present reproducible evidence of your own implementation.
 
 ## Before you begin
 
-- Use fictional sample data and accounts.
-- Keep API keys and passwords out of source control.
-- Work in a dedicated project folder; do not test against systems or data you do not own.
-- Commit small changes so you can recover if something breaks.
-- If your computer is low on storage, use the simplest stack and local files first.
+Use fictional sample data. Work only in a dedicated project folder and on systems you own. Keep passwords, tokens and API keys out of source control. Start with the smallest local setup that works on your computer.
 
 ## Tools and setup
 
-1. Install the current stable version of the language/runtime listed above.
-2. Install Visual Studio Code or another editor you already use.
-3. Create a new GitHub repository for this project.
-4. Clone it to your computer and open the folder in your editor.
-5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
-6. Record the versions of your tools in the README.
-7. Run a minimal “hello world” or starter app and save the successful output before adding features.
+1. Install the runtime and editor listed above.
+2. Create a GitHub repository for this project.
+3. Clone it locally and open the folder in your editor.
+4. Add a README, .gitignore, and folders for source code, tests, sample data and docs.
+5. Record tool versions in the README.
+6. Run a minimal starter app and confirm it works before adding features.
 
 ## Step-by-step lab guide
 
-### Step 1. Set the learning goals
+### Step 1: Set up the workspace
 
-Choose 5–8 concepts: sender mismatch, urgency, suspicious links, unexpected attachments, requests for secrets, and reporting.
+Choose learning goals: sender mismatch, urgency, suspicious links, unexpected attachments and requests for secrets.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 2: Plan the workflow
 
-### Step 2. Create a static project
+Create index.html, styles.css, app.js and fictional examples.json. Avoid analytics and external tracking.
 
-Create index.html, styles.css, app.js, and a fictional examples.json file. Use no external tracking scripts.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 3: Build the core feature
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Write fictional suspicious and legitimate messages using reserved example domains.
 
-### Step 3. Write fictional examples
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 4: Add validation and safety
 
-Create safe sample messages with fictional brands and reserved example domains. Include both suspicious and legitimate examples.
+Build a message viewer. Keep links inert; never navigate to suspicious destinations.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 5: Test the implementation
 
-### Step 4. Build the message viewer
+Add answer choices asking learners to identify warning signs and a safe next step.
 
-Display sender, subject, message body, and link text. Make all links inert; do not navigate to external destinations.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 6: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Show explanations after each answer, including how to verify through a trusted channel.
 
-### Step 5. Add answer choices
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 7: Document and capture evidence
 
-Ask learners to identify warning signs and choose a safe next step. Do not ask for passwords or personal information.
+Add score and progress in browser memory or local storage with a reset control.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 8: Document and capture evidence
 
-### Step 6. Explain each answer
+Use semantic headings, keyboard-accessible controls, visible focus and accessible feedback.
 
-After selection, explain the indicators and why the safe action is to verify through a trusted channel.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 9: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Test every answer, explanation, reset action and mobile layout.
 
-### Step 7. Add progress and scoring
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 10: Document and capture evidence
 
-Track score only in browser memory or local storage. Provide a reset button and disclose what is stored.
+Verify there is no credential collection, email sending, tracking or network submission.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 11: Document and capture evidence
 
-### Step 8. Add accessibility
+Save screenshots, example data, test checklist and README.
 
-Use semantic headings, keyboard-accessible controls, visible focus, and accessible feedback announcements.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 12: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Add facilitator notes explaining that this is an educational simulation, not a tool for deceiving participants.
 
-### Step 9. Test the scenarios
-
-Check every example, correct answer, explanation, reset, and mobile layout.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 10. Review privacy
-
-Confirm there is no analytics, credential collection, external email, or network submission.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 11. Capture evidence
-
-Save screenshots, example dataset, test checklist, and README.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 12. Write a facilitator note
-
-Explain that this is an educational simulation and should never be used to trick or shame participants.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
+**Checkpoint:** Save a short note or screenshot showing this step works.
 
 ## Testing checklist
 
-- [ ] The application starts using the documented command.
-- [ ] The main user workflow works with sample data.
+- [ ] App starts using documented commands.
+- [ ] Main workflow works with fictional sample data.
 - [ ] Invalid and missing inputs are handled safely.
-- [ ] Errors are understandable and do not expose secrets or stack traces.
-- [ ] Keyboard navigation and mobile layout have been checked.
-- [ ] Automated tests pass, or manual test results are documented.
-- [ ] Dependencies and configuration have been reviewed.
+- [ ] Errors do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout are checked.
+- [ ] Automated tests pass or manual results are documented.
+- [ ] Dependencies and configuration are reviewed.
 
 ## Evidence checklist
 
-- [ ] Repository link with readable source code.
+- [ ] GitHub repository with readable source code.
 - [ ] Screenshot of the working application.
-- [ ] Screenshot or text output of setup and run commands.
+- [ ] Setup and run output.
 - [ ] Architecture or data-flow diagram.
 - [ ] Test plan and test results.
-- [ ] Example input and output using fictional data.
-- [ ] README with setup, features, limitations, and security notes.
+- [ ] Example input/output using fictional data.
+- [ ] README with setup, features, limitations and security notes.
 
 ## Final deliverables
 
 1. Source code in GitHub.
-2. A complete README with tested setup instructions.
-3. Tests and test results.
-4. Screenshots or a short demonstration.
+2. README with tested setup instructions.
+3. Tests and results.
+4. Screenshots or a short demo.
 5. Architecture notes and known limitations.
-6. A brief reflection describing what you learned and what you would improve.
+6. A reflection describing what you learned and what you would improve.
 
 ## Troubleshooting
 
-- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
-- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
-- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
-- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
-- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
+- **Runtime command not found:** reopen the terminal and verify the runtime version.
+- **Dependency installation fails:** check the runtime version and install only required packages.
+- **App will not start:** read the first error, verify file paths and ports, then fix one issue at a time.
+- **API errors:** inspect status and sanitized response; verify request format and required fields.
+- **Tests fail:** reproduce one failure, compare expected and actual values, then rerun the suite.
 
 ## Definition of done
 
-Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
+Mark **In Progress** when implementation begins. Mark **Completed** only after the working app, tests, screenshots, documentation and limitations are committed. A plan or mockup alone is not completion evidence.
