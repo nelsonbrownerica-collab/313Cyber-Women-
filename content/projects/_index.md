@@ -1,14 +1,14 @@
 ---
-title: "Cybersecurity Software Build Guides"
+title: "Explore Project Build Guides"
 date: 2026-11-25
 type: landing
-summary: "Ten guided software development projects focused on practical security-aware applications."
+summary: "Eleven guided software development projects with step-by-step instructions, testing, troubleshooting and evidence checklists."
 
 sections:
   - block: collection
     content:
-      title: "11 Software Projects to Build"
-      text: "These are project briefs and build plans—not finished products. Open each guide for the feature scope, suggested architecture, build sequence, tests, and evidence checklist."
+      title: "11 Guided Software Projects"
+      text: "Choose a project to open its build lab. Every guide includes a project goal, tools and setup, numbered build steps, testing checklist, troubleshooting, evidence to save and final deliverables. All projects begin as Planned until implementation evidence is added."
       filters:
         folders:
           - projects
