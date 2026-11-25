@@ -1,7 +1,7 @@
 ---
 title: "Secure E-Commerce Application"
 date: 2026-11-25
-summary: "Build a local storefront with a product catalog, search, cart, mock checkout, order history, and a small admin area. Use test data and simulated payments only."
+summary: "Build a local storefront with product catalog, search, cart, simulated checkout, order history and admin product management."
 tags:
   - "Web Applications"
   - "Guided Lab"
@@ -12,160 +12,133 @@ status: "Planned"
 role: "Independent guided build"
 duration: "20–30 hours"
 ---
-<div class="lab-hero">
-  <span class="lab-status">● PLANNED BUILD</span>
-  <span class="lab-level">Intermediate</span>
-  <span class="lab-duration">20–30 hours</span>
-</div>
 
-> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
+<div class="lab-meta"><span>● PLANNED</span><span>Intermediate</span><span>20–30 hours</span></div>
+
+> **Status:** This is a guided build plan, not a claim that the application is implemented. Update the status only after you complete the work and save evidence.
 
 ## Project overview
 
-Build a local storefront with a product catalog, search, cart, mock checkout, order history, and a small admin area. Use test data and simulated payments only.
+Build a local storefront with product catalog, search, cart, simulated checkout, order history and admin product management.
 
-**Suggested stack:** React, Node.js, Express, SQLite, CSS, GitHub Actions
+**Suggested tools:** React, Node.js, Express, SQLite
 
 ## Learning objectives
 
-By completing this lab, you should be able to:
-
 - Plan a small application and explain its architecture.
-- Build and validate the core workflow.
-- Test normal, invalid, and edge-case behavior.
-- Document security, privacy, accessibility, and known limitations.
+- Build and validate its main workflow.
+- Test normal, invalid and edge-case behavior.
+- Document security, privacy, accessibility and limitations.
 - Present reproducible evidence of your own implementation.
 
 ## Before you begin
 
-- Use fictional sample data and accounts.
-- Keep API keys and passwords out of source control.
-- Work in a dedicated project folder; do not test against systems or data you do not own.
-- Commit small changes so you can recover if something breaks.
-- If your computer is low on storage, use the simplest stack and local files first.
+Use fictional sample data. Work only in a dedicated project folder and on systems you own. Keep passwords, tokens and API keys out of source control. Start with the smallest local setup that works on your computer.
 
 ## Tools and setup
 
-1. Install the current stable version of the language/runtime listed above.
-2. Install Visual Studio Code or another editor you already use.
-3. Create a new GitHub repository for this project.
-4. Clone it to your computer and open the folder in your editor.
-5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
-6. Record the versions of your tools in the README.
-7. Run a minimal “hello world” or starter app and save the successful output before adding features.
+1. Install the runtime and editor listed above.
+2. Create a GitHub repository for this project.
+3. Clone it locally and open the folder in your editor.
+4. Add a README, .gitignore, and folders for source code, tests, sample data and docs.
+5. Record tool versions in the README.
+6. Run a minimal starter app and confirm it works before adding features.
 
 ## Step-by-step lab guide
 
-### Step 1. Prepare the workspace
+### Step 1: Set up the workspace
 
-Install Node.js LTS and VS Code. Create a GitHub repository named secure-ecommerce. Create client, server, docs, and tests folders. Run `git init` and add a README.
+Create a GitHub repository and folders for client, server, tests, docs and sample-data. Install Node.js LTS and verify node and npm versions.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 2: Plan the workflow
 
-### Step 2. Plan the user journeys
+Sketch customer and admin journeys. Define product, cart, order and demo-user fields. Store prices as integer cents.
 
-Sketch visitor, customer, and admin flows. Write user stories for browse, search, add-to-cart, checkout simulation, and product maintenance. Define what is out of scope: real payments and real customer accounts.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 3: Build the core feature
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Create fictional product seed data in JSON with ID, name, category, priceCents and stock.
 
-### Step 3. Create sample data
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 4: Add validation and safety
 
-Add 8–12 fictional products in a JSON file. Give each an ID, name, description, price in cents, category, and stock count. Never store prices as floating-point values.
+Build responsive product cards, search, category filters, loading and empty states. Use semantic HTML and keyboard controls.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 5: Test the implementation
 
-### Step 4. Build the catalog UI
+Create GET /api/products and GET /api/products/:id. Validate IDs and return consistent JSON errors.
 
-Create responsive product cards, search, category filters, and an empty-state message. Check keyboard navigation and mobile layout.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 6: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Implement cart add/remove/quantity behavior. Reject non-integer, zero, negative and over-stock quantities.
 
-### Step 5. Create the API
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 7: Document and capture evidence
 
-Add `GET /api/products`, `GET /api/products/:id`, and `GET /api/health`. Validate IDs and return consistent JSON errors.
+Implement POST /api/orders in test mode only. Recalculate prices and totals server-side; return a mock order ID. Never request payment credentials.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 8: Document and capture evidence
 
-### Step 6. Add cart behavior
+Create a demo admin product form. Validate fields on the server and document role checks.
 
-Support add, remove, and quantity changes. Reject zero, negative, non-integer, and over-stock quantities. Recalculate totals on the server.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 9: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Test cart totals, invalid quantities, missing products, empty checkout and stock limits.
 
-### Step 7. Add a simulated checkout
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 10: Document and capture evidence
 
-Create `POST /api/orders` that accepts a test cart only. Re-read product prices on the server, calculate totals, and return a fake order number. Do not collect card numbers or connect payment services.
+Review input validation, output escaping, error messages, dependency audit, focus order and color contrast.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 11: Document and capture evidence
 
-### Step 8. Add account-flow demonstration
+Document setup, architecture, API examples, screenshots, test output, security notes and known limitations.
 
-Use clearly labeled demo accounts or a local mock login. If implementing real password storage, hash passwords with a maintained password-hashing library and never log credentials.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 9. Create the admin view
-
-Allow a demo admin to add, edit, and deactivate sample products. Validate all fields on the server and document role checks.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 10. Test important cases
-
-Test valid cart totals, stock limits, invalid quantities, missing products, malformed requests, and checkout with an empty cart.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 11. Review security and accessibility
-
-Check input validation, output escaping, safe error messages, dependency audit output, focus order, labels, and color contrast.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 12. Document and publish evidence
-
-Add setup instructions, architecture sketch, API examples, test output, screenshots, and limitations. Deploy only if you can configure it safely; never add secrets to Git.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
+**Checkpoint:** Save a short note or screenshot showing this step works.
 
 ## Testing checklist
 
-- [ ] The application starts using the documented command.
-- [ ] The main user workflow works with sample data.
+- [ ] App starts using documented commands.
+- [ ] Main workflow works with fictional sample data.
 - [ ] Invalid and missing inputs are handled safely.
-- [ ] Errors are understandable and do not expose secrets or stack traces.
-- [ ] Keyboard navigation and mobile layout have been checked.
-- [ ] Automated tests pass, or manual test results are documented.
-- [ ] Dependencies and configuration have been reviewed.
+- [ ] Errors do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout are checked.
+- [ ] Automated tests pass or manual results are documented.
+- [ ] Dependencies and configuration are reviewed.
 
 ## Evidence checklist
 
-- [ ] Repository link with readable source code.
+- [ ] GitHub repository with readable source code.
 - [ ] Screenshot of the working application.
-- [ ] Screenshot or text output of setup and run commands.
+- [ ] Setup and run output.
 - [ ] Architecture or data-flow diagram.
 - [ ] Test plan and test results.
-- [ ] Example input and output using fictional data.
-- [ ] README with setup, features, limitations, and security notes.
+- [ ] Example input/output using fictional data.
+- [ ] README with setup, features, limitations and security notes.
 
 ## Final deliverables
 
 1. Source code in GitHub.
-2. A complete README with tested setup instructions.
-3. Tests and test results.
-4. Screenshots or a short demonstration.
+2. README with tested setup instructions.
+3. Tests and results.
+4. Screenshots or a short demo.
 5. Architecture notes and known limitations.
-6. A brief reflection describing what you learned and what you would improve.
+6. A reflection describing what you learned and what you would improve.
 
 ## Troubleshooting
 
-- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
-- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
-- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
-- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
-- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
+- **Runtime command not found:** reopen the terminal and verify the runtime version.
+- **Dependency installation fails:** check the runtime version and install only required packages.
+- **App will not start:** read the first error, verify file paths and ports, then fix one issue at a time.
+- **API errors:** inspect status and sanitized response; verify request format and required fields.
+- **Tests fail:** reproduce one failure, compare expected and actual values, then rerun the suite.
 
 ## Definition of done
 
-Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
+Mark **In Progress** when implementation begins. Mark **Completed** only after the working app, tests, screenshots, documentation and limitations are committed. A plan or mockup alone is not completion evidence.
