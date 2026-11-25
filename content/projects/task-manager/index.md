@@ -1,7 +1,7 @@
 ---
 title: "Secure Task & Workflow Manager"
 date: 2026-11-25
-summary: "Build a task board with projects, due dates, task ownership, comments, and role-aware access. Use fictional users and local development data."
+summary: "Build a task board with projects, task ownership, due dates, comments, activity history and role-aware access using fictional users."
 tags:
   - "Web Applications"
   - "Guided Lab"
@@ -12,160 +12,133 @@ status: "Planned"
 role: "Independent guided build"
 duration: "15–25 hours"
 ---
-<div class="lab-hero">
-  <span class="lab-status">● PLANNED BUILD</span>
-  <span class="lab-level">Intermediate</span>
-  <span class="lab-duration">15–25 hours</span>
-</div>
 
-> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
+<div class="lab-meta"><span>● PLANNED</span><span>Intermediate</span><span>15–25 hours</span></div>
+
+> **Status:** This is a guided build plan, not a claim that the application is implemented. Update the status only after you complete the work and save evidence.
 
 ## Project overview
 
-Build a task board with projects, due dates, task ownership, comments, and role-aware access. Use fictional users and local development data.
+Build a task board with projects, task ownership, due dates, comments, activity history and role-aware access using fictional users.
 
-**Suggested stack:** Vue or React, Node.js, Express, SQLite, CSS
+**Suggested tools:** Vue or React, Node.js, Express, SQLite
 
 ## Learning objectives
 
-By completing this lab, you should be able to:
-
 - Plan a small application and explain its architecture.
-- Build and validate the core workflow.
-- Test normal, invalid, and edge-case behavior.
-- Document security, privacy, accessibility, and known limitations.
+- Build and validate its main workflow.
+- Test normal, invalid and edge-case behavior.
+- Document security, privacy, accessibility and limitations.
 - Present reproducible evidence of your own implementation.
 
 ## Before you begin
 
-- Use fictional sample data and accounts.
-- Keep API keys and passwords out of source control.
-- Work in a dedicated project folder; do not test against systems or data you do not own.
-- Commit small changes so you can recover if something breaks.
-- If your computer is low on storage, use the simplest stack and local files first.
+Use fictional sample data. Work only in a dedicated project folder and on systems you own. Keep passwords, tokens and API keys out of source control. Start with the smallest local setup that works on your computer.
 
 ## Tools and setup
 
-1. Install the current stable version of the language/runtime listed above.
-2. Install Visual Studio Code or another editor you already use.
-3. Create a new GitHub repository for this project.
-4. Clone it to your computer and open the folder in your editor.
-5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
-6. Record the versions of your tools in the README.
-7. Run a minimal “hello world” or starter app and save the successful output before adding features.
+1. Install the runtime and editor listed above.
+2. Create a GitHub repository for this project.
+3. Clone it locally and open the folder in your editor.
+4. Add a README, .gitignore, and folders for source code, tests, sample data and docs.
+5. Record tool versions in the README.
+6. Run a minimal starter app and confirm it works before adding features.
 
 ## Step-by-step lab guide
 
-### Step 1. Create the project
+### Step 1: Set up the workspace
 
-Create a repository and folders for frontend, backend, tests, and docs. Record the problem and three user roles: viewer, member, and administrator.
+Create a repository and frontend, backend, tests and docs folders. Define viewer, member and administrator roles.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 2: Plan the workflow
 
-### Step 2. Design the data model
+Design users, projects, tasks and comments tables with IDs, timestamps, status values and foreign keys.
 
-Define users, projects, tasks, and comments. Use stable IDs, timestamps, status values, and foreign keys.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 3: Build the core feature
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Build a responsive board with To Do, In Progress and Done columns and task cards.
 
-### Step 3. Build the board interface
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 4: Add validation and safety
 
-Create columns for To Do, In Progress, and Done. Add task cards with title, due date, priority, and owner.
+Add create/edit forms with required fields, length limits and validation messages.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 5: Test the implementation
 
-### Step 4. Add task creation and editing
+Build API routes to list, create, update and delete tasks. Validate input server-side.
 
-Build forms with required-field checks, length limits, and clear validation messages.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 6: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Create a permission matrix and enforce access rules in backend middleware, not only in the interface.
 
-### Step 5. Build the backend API
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 7: Document and capture evidence
 
-Create endpoints to list, create, update, and delete tasks. Validate every request on the server.
+Add search and filters for status, priority, owner and due date. Use parameterized database queries.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 8: Document and capture evidence
 
-### Step 6. Add role permissions
+Record activity history with actor, timestamp and changed fields. Never log passwords or tokens.
 
-Define a permission matrix. Viewers can read; members can update assigned tasks; administrators can manage project members. Enforce rules in backend middleware.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 9: Document and capture evidence
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+Add local in-app notification mockups; do not send email or expose user data.
 
-### Step 7. Add filters and search
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 10: Document and capture evidence
 
-Filter by status, priority, owner, and due date. Search titles without injecting raw user input into SQL.
+Test role boundaries, invalid input, empty states, keyboard navigation and mobile layout.
 
-**Checkpoint:** Save a screenshot or short note showing this step works.
+**Checkpoint:** Save a short note or screenshot showing this step works.
+### Step 11: Document and capture evidence
 
-### Step 8. Add activity history
+Save screenshots, schema diagram, permission matrix, API examples, test results and README.
 
-Record task changes with timestamp, actor ID, and changed fields. Do not store passwords or session tokens in activity logs.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 9. Add notifications
-
-Start with in-app notifications or a local mock. Avoid sending real emails until opt-in and privacy handling are designed.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 10. Test authorization boundaries
-
-Verify a viewer cannot edit, a member cannot alter another user's restricted task, and an unauthenticated request is rejected.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 11. Test usability
-
-Check mobile layout, keyboard access, form labels, empty states, and clear error messages.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
-### Step 12. Publish documentation
-
-Save schema diagram, permission matrix, screenshots, API examples, test results, setup steps, and known limitations.
-
-**Checkpoint:** Save a screenshot or short note showing this step works.
-
+**Checkpoint:** Save a short note or screenshot showing this step works.
 
 ## Testing checklist
 
-- [ ] The application starts using the documented command.
-- [ ] The main user workflow works with sample data.
+- [ ] App starts using documented commands.
+- [ ] Main workflow works with fictional sample data.
 - [ ] Invalid and missing inputs are handled safely.
-- [ ] Errors are understandable and do not expose secrets or stack traces.
-- [ ] Keyboard navigation and mobile layout have been checked.
-- [ ] Automated tests pass, or manual test results are documented.
-- [ ] Dependencies and configuration have been reviewed.
+- [ ] Errors do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout are checked.
+- [ ] Automated tests pass or manual results are documented.
+- [ ] Dependencies and configuration are reviewed.
 
 ## Evidence checklist
 
-- [ ] Repository link with readable source code.
+- [ ] GitHub repository with readable source code.
 - [ ] Screenshot of the working application.
-- [ ] Screenshot or text output of setup and run commands.
+- [ ] Setup and run output.
 - [ ] Architecture or data-flow diagram.
 - [ ] Test plan and test results.
-- [ ] Example input and output using fictional data.
-- [ ] README with setup, features, limitations, and security notes.
+- [ ] Example input/output using fictional data.
+- [ ] README with setup, features, limitations and security notes.
 
 ## Final deliverables
 
 1. Source code in GitHub.
-2. A complete README with tested setup instructions.
-3. Tests and test results.
-4. Screenshots or a short demonstration.
+2. README with tested setup instructions.
+3. Tests and results.
+4. Screenshots or a short demo.
 5. Architecture notes and known limitations.
-6. A brief reflection describing what you learned and what you would improve.
+6. A reflection describing what you learned and what you would improve.
 
 ## Troubleshooting
 
-- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
-- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
-- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
-- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
-- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
+- **Runtime command not found:** reopen the terminal and verify the runtime version.
+- **Dependency installation fails:** check the runtime version and install only required packages.
+- **App will not start:** read the first error, verify file paths and ports, then fix one issue at a time.
+- **API errors:** inspect status and sanitized response; verify request format and required fields.
+- **Tests fail:** reproduce one failure, compare expected and actual values, then rerun the suite.
 
 ## Definition of done
 
-Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
+Mark **In Progress** when implementation begins. Mark **Completed** only after the working app, tests, screenshots, documentation and limitations are committed. A plan or mockup alone is not completion evidence.
