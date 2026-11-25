@@ -1,89 +1,171 @@
 ---
 title: "AI-Assisted Alert Summarizer"
 date: 2026-11-25
-summary: "A human-reviewed prototype that summarizes synthetic alerts, cites source record IDs, and explicitly identifies uncertainty."
+summary: "Build a tool that turns synthetic security alerts into structured summaries for human review. It must preserve source facts, flag uncertainty, and never make autonomous response decisions."
 tags:
-  - "AI"
-  - "Security Tools"
+  - "AI & Automation"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "15–25 hours"
 ---
-## Build status
+<div class="lab-hero">
+  <span class="lab-status">● PLANNED BUILD</span>
+  <span class="lab-level">Advanced</span>
+  <span class="lab-duration">15–25 hours</span>
+</div>
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
 
-## Project goal
+## Project overview
 
-A human-reviewed prototype that summarizes synthetic alerts, cites source record IDs, and explicitly identifies uncertainty.
+Build a tool that turns synthetic security alerts into structured summaries for human review. It must preserve source facts, flag uncertainty, and never make autonomous response decisions.
 
-## What to build
+**Suggested stack:** Python, FastAPI, Pydantic, local mock model or optional API
 
-Build a small app that formats mock security events into a prompt and validates a structured summary. Begin with deterministic mock output before connecting any model.
+## Learning objectives
 
-## Suggested technology stack
+By completing this lab, you should be able to:
 
-Python, JSON, Streamlit or Flask, optional approved model API later.
+- Plan a small application and explain its architecture.
+- Build and validate the core workflow.
+- Test normal, invalid, and edge-case behavior.
+- Document security, privacy, accessibility, and known limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+- Use fictional sample data and accounts.
+- Keep API keys and passwords out of source control.
+- Work in a dedicated project folder; do not test against systems or data you do not own.
+- Commit small changes so you can recover if something breaks.
+- If your computer is low on storage, use the simplest stack and local files first.
 
-1. 1. Create 5 synthetic alert packets. 2. Define output schema: summary, evidence_ids, confidence, unknowns, next_steps. 3. Build deterministic baseline summary first. 4. Add an optional model adapter behind a feature flag. 5. Validate output against schema. 6. Test contradictory records and prompt-injection-like text embedded in logs. 7. Require human approval before any action. 8. Compare AI output to a manually written reference and record errors.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the current stable version of the language/runtime listed above.
+2. Install Visual Studio Code or another editor you already use.
+3. Create a new GitHub repository for this project.
+4. Clone it to your computer and open the folder in your editor.
+5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
+6. Record the versions of your tools in the README.
+7. Run a minimal “hello world” or starter app and save the successful output before adding features.
 
-Input: synthetic event JSON. Output: structured case summary with cited event IDs. No response actions or external tool execution.
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1. Define safe scope
 
-- [ ] Every factual statement links to an event ID
-- [ ] unsupported claims flagged
-- [ ] malformed output rejected
-- [ ] human approval required
-- [ ] no private logs or secrets.
+Write a one-page scope: summarize synthetic alerts only, no automatic blocking, no live endpoint access, and human review required.
 
-## Evidence to save
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-- [ ] Synthetic inputs
-- [ ] prompt template
-- [ ] schema
-- [ ] test matrix
-- [ ] before/after comparison
-- [ ] screenshots
-- [ ] limitations
-- [ ] README.
+### Step 2. Create sample alerts
 
-## Suggested repository structure
+Write 10 fictional alerts with timestamps, host labels, event type, severity, and evidence snippets. Avoid real IPs or personal data.
 
-```text
-ai-alert-summarizer/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+### Step 3. Create the Python project
 
-## Final README checklist
+Set up a virtual environment, FastAPI, Pydantic, pytest, and folders for schemas, services, samples, and tests.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 4. Define a strict input schema
+
+Validate required fields, maximum text length, timestamps, and allowed severity values. Reject unexpected fields where appropriate.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 5. Build a deterministic baseline
+
+Before adding AI, create a rules-based summary that lists facts, missing fields, and next verification questions.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 6. Add an optional model adapter
+
+Put model access behind one service interface. Keep keys in environment variables and never commit `.env` files. The app must still work in mock mode.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 7. Constrain the output format
+
+Require JSON fields for summary, observed facts, uncertainty, suggested checks, and source references. Treat alert text as untrusted input.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 8. Defend against prompt injection
+
+Do not follow instructions embedded in alert content. Separate system instructions from evidence and test malicious-looking sample strings.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 9. Add source traceability
+
+For each statement, retain the alert field or evidence snippet that supports it. If unsupported, label it as an inference or omit it.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 10. Build a review screen
+
+Show original alert beside the generated summary, with approve, edit, and reject controls. No action is taken on the underlying system.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 11. Evaluate quality
+
+Create a small test set and score factual consistency, missing evidence, unsupported claims, and schema validity. Record failure examples.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 12. Document limitations
+
+Save architecture, threat model, prompt-injection tests, evaluation results, screenshots, and a statement that analysts must verify every summary.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+
+## Testing checklist
+
+- [ ] The application starts using the documented command.
+- [ ] The main user workflow works with sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors are understandable and do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout have been checked.
+- [ ] Automated tests pass, or manual test results are documented.
+- [ ] Dependencies and configuration have been reviewed.
+
+## Evidence checklist
+
+- [ ] Repository link with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Screenshot or text output of setup and run commands.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input and output using fictional data.
+- [ ] README with setup, features, limitations, and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. A complete README with tested setup instructions.
+3. Tests and test results.
+4. Screenshots or a short demonstration.
+5. Architecture notes and known limitations.
+6. A brief reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
+- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
+- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
+- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
+- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
