@@ -1,6 +1,6 @@
 ---
 title: ""
-summary: "Erica Nelson's software development portfolio: practical applications, Python automation, secure APIs, and AI-assisted tools."
+summary: "Erica Nelson's software development portfolio: secure applications, Python automation, APIs, and AI-assisted tools."
 date: 2026-11-25
 type: landing
 
@@ -9,27 +9,26 @@ sections:
     id: hero
     content:
       username: me
-      greeting: "Hello, I'm"
+      greeting: "SOFTWARE DEVELOPER & CYBER INNOVATOR"
       show_status: false
       show_scroll_indicator: true
       typewriter:
         enable: true
-        prefix: "I develop"
+        prefix: "BUILDING SECURE SOLUTIONS."
         strings:
-          - "security-minded software"
-          - "Python automation tools"
-          - "web applications and APIs"
-          - "AI-assisted workflows"
-        type_speed: 65
-        delete_speed: 35
-        pause_time: 2200
+          - "CREATING IMPACT."
+          - "DEVELOPING WITH PURPOSE."
+          - "DESIGNING SECURITY-MINDED SOFTWARE."
+        type_speed: 55
+        delete_speed: 28
+        pause_time: 2100
       cta_buttons:
-        - text: Explore My Projects
+        - text: Explore Projects
           url: "#projects"
-          icon: arrow-down
-        - text: View Source Code
-          url: "https://github.com/nelsonbrownerica-collab"
-          icon: brands/github
+          icon: code
+        - text: View My Resume
+          url: "/uploads/resume.pdf"
+          icon: download
     design:
       style: centered
       avatar_shape: circle
@@ -37,15 +36,15 @@ sections:
       background:
         color:
           light: "#F8FAFC"
-          dark: "#050B16"
+          dark: "#030712"
       spacing:
-        padding: ["6rem", "0", "4rem", "0"]
+        padding: ["5rem", "0", "3rem", "0"]
 
   - block: portfolio
     id: projects
     content:
-      title: "Selected Software Projects"
-      subtitle: "Practical builds focused on application development, secure-by-design thinking, automation, and AI. Each project page explains the build plan and current status."
+      title: "Explore My Projects"
+      subtitle: "Hands-on software builds with a security-first mindset. Open any project to follow its guided build plan, test the result, and document your work."
       count: 11
       filters:
         folders:
@@ -53,29 +52,29 @@ sections:
       buttons:
         - name: All Projects
           tag: "*"
-        - name: Full-Stack
-          tag: Full-Stack
-        - name: Python
-          tag: Python
+        - name: Web Applications
+          tag: Web Applications
         - name: Security Tools
           tag: Security Tools
-        - name: AI
+        - name: AI & Automation
           tag: AI
+        - name: Python
+          tag: Python
       default_button_index: 0
     design:
       columns: 3
       background:
         color:
           light: "#FFFFFF"
-          dark: "#071426"
+          dark: "#030712"
       spacing:
-        padding: ["4rem", "0", "4rem", "0"]
+        padding: ["3rem", "0", "4rem", "0"]
 
   - block: tech-stack
     id: skills
     content:
-      title: "Technologies & Development Workflow"
-      subtitle: "Tools selected for the projects in this portfolio. Project pages identify what is planned and what has actually been implemented."
+      title: "Tools & Technologies"
+      subtitle: "Technologies used or explored across the project guides. Each project page lists its own setup requirements."
       categories:
         - name: Programming & Data
           items:
@@ -95,7 +94,7 @@ sections:
               icon: devicon/react
             - name: Node.js
               icon: devicon/nodejs
-        - name: Developer Tools
+        - name: Developer Workflow
           items:
             - name: GitHub
               icon: brands/github
@@ -111,40 +110,40 @@ sections:
       background:
         color:
           light: "#F1F5F9"
-          dark: "#050B16"
+          dark: "#071426"
       spacing:
-        padding: ["4rem", "0", "4rem", "0"]
+        padding: ["3rem", "0", "3rem", "0"]
 
   - block: cta-card
     id: about
     content:
-      title: "How I approach building software"
+      title: "Security-minded development. Practical results."
       text: |
-        I focus on practical applications with clear user needs, thoughtful architecture, input validation, access controls, useful tests, and readable documentation.
+        I build and document practical applications with attention to clean code, user needs, secure design, testing, and clear technical documentation.
 
-        My process is to define the problem, build in manageable steps, test expected and unexpected behavior, document technical decisions, and improve the result. This portfolio is a transparent record of that work—not a list of skills or products I haven't demonstrated.
+        Each project guide includes a build sequence, testing steps, troubleshooting notes, and an evidence checklist. Project status stays transparent: planned work is not presented as completed work.
       button:
-        text: Browse All Build Guides
+        text: Browse All Project Guides
         url: "/projects/"
         new_tab: false
     design:
       card:
-        css_class: "bg-gradient-to-br from-blue-100 via-slate-100 to-cyan-100 dark:from-blue-950 dark:via-slate-900 dark:to-cyan-950"
+        css_class: "bg-gradient-to-br from-blue-100 via-slate-100 to-cyan-100 dark:from-blue-950 dark:via-slate-900 dark:to-slate-950"
         text_color: dark
       background:
         color:
           light: "#F1F5F9"
           dark: "#071426"
       spacing:
-        padding: ["4rem", "0", "5rem", "0"]
+        padding: ["3rem", "0", "4rem", "0"]
 
   - block: contact-info
     id: contact
     content:
-      title: "Connect"
+      title: "Let's Connect"
       subtitle: "Explore the code and follow project progress"
       text: |
-        For project details and source code, visit my GitHub profile. Each completed project will include its own repository, documentation, tests, and supporting evidence.
+        Visit my GitHub profile to explore source code, project documentation, and future releases.
       email: ""
       autolink: false
     design:
@@ -152,7 +151,7 @@ sections:
       background:
         color:
           light: "#FFFFFF"
-          dark: "#050B16"
+          dark: "#030712"
       spacing:
-        padding: ["4rem", "0", "4rem", "0"]
+        padding: ["3rem", "0", "4rem", "0"]
 ---
