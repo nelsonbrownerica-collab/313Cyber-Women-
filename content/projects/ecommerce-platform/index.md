@@ -1,167 +1,87 @@
 ---
-title: "E-Commerce Platform"
-date: 2024-11-15
-summary: "E-commerce API backend with Stripe payments, inventory management, and real-time webhooks"
-tags: 
-  - Backend
-  - Node.js
-  - API
-  - E-Commerce
-tech_stack:
-  - React
-  - TypeScript
-  - Node.js
-  - Express
-  - PostgreSQL
-  - Stripe
-  - Redis
-  - Docker
-links:
-  - type: github
-    url: https://github.com/alexjohnson/ecommerce-platform
-    label: Code
-  - type: live
-    url: https://shop-demo.example.com
-    label: Demo
-featured: true
-status: "Live"
-role: "Lead Developer"
-duration: "4 months"
-team_size: 2
-highlights:
-  - "Handles 10k+ concurrent users"
-  - "99.9% uptime SLA"
-  - "Processing $50k+ monthly transactions"
-  - "60% faster page load vs competitors"
+title: "Secure E-Commerce Application"
+date: 2026-11-25
+summary: "A small e-commerce application that demonstrates product browsing, cart logic, secure account flows, and safe checkout simulation."
+tags:
+  - "Full-Stack"
+  - "Security Tools"
+authors:
+  - me
+featured: false
+status: "Planned"
+role: "Independent project build"
+duration: "To be determined"
 ---
+## Build status
 
-A modern, scalable e-commerce platform built from scratch with performance and user experience as top priorities.
+**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
 
-## Overview
+## Project goal
 
-Built a complete e-commerce solution for a mid-sized retail company looking to expand online. The platform handles everything from product catalog management to payment processing and order fulfillment.
+A small e-commerce application that demonstrates product browsing, cart logic, secure account flows, and safe checkout simulation.
 
-## Key Features
+## What to build
 
-### Customer-Facing
-- **Product Catalog** - Dynamic filtering, sorting, and search with instant results
-- **Shopping Cart** - Real-time inventory checking and price calculations
-- **Checkout** - Secure payment processing via Stripe with Apple Pay/Google Pay support
-- **Order Tracking** - Real-time order status updates with email notifications
-- **User Accounts** - Profile management, order history, and saved addresses
+Build a local storefront with a product catalog, search/filter, cart, mock checkout, order history, and admin product management.
 
-### Admin Dashboard
-- **Inventory Management** - Real-time stock tracking and low-stock alerts
-- **Order Management** - Bulk order processing and fulfillment workflow
-- **Analytics** - Sales dashboards, customer insights, and revenue reporting
-- **Product Management** - Easy product creation with image uploads and variants
+## Suggested technology stack
 
-## Technical Highlights
+React or plain JavaScript, Node.js/Express, SQLite, CSS, GitHub Actions.
 
-### Performance Optimization
-- Implemented Redis caching reducing database queries by 70%
-- Optimized images with WebP format and lazy loading
-- Server-side rendering for critical pages improving SEO and load times
-- CDN integration for global content delivery
+Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
 
-### Scalability
-- Microservices architecture allowing independent scaling
-- Horizontal scaling with load balancing
-- Database read replicas for improved query performance
-- Message queues for async processing (order emails, inventory updates)
+## Step-by-step build plan
 
-### Security
-- JWT authentication with refresh tokens
-- Rate limiting to prevent abuse
-- Input validation and sanitization
-- PCI-compliant payment processing via Stripe
+1. 1. Create repository and document scope. 2. Sketch user and admin flows. 3. Build responsive product catalog from seed JSON. 4. Add cart state and quantity validation. 5. Create local API routes for products and orders. 6. Add test-only checkout that never processes real payments. 7. Add validation, safe error messages, and basic rate-limit design notes. 8. Add tests and deployment instructions.
 
-## Architecture
+## Data model and interfaces
 
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  React SPA  │────▶│   REST API   │────▶│ PostgreSQL  │
-└─────────────┘     │  (Express)   │     └─────────────┘
-                    └──────┬───────┘
-                           │
-                    ┌──────▼───────┐
-                    │    Redis     │
-                    │   (Cache)    │
-                    └──────────────┘
+Products, cart, orders, users (mock). API: GET /api/products, GET /api/products/:id, POST /api/orders (test mode only).
+
+## Acceptance criteria
+
+- [ ] Catalog/search works
+- [ ] invalid quantities rejected
+- [ ] totals calculated server-side
+- [ ] no real payment credentials
+- [ ] tests cover cart and order validation.
+
+## Evidence to save
+
+- [ ] Product screenshots
+- [ ] architecture diagram
+- [ ] API examples
+- [ ] test results
+- [ ] README
+- [ ] known limitations.
+
+## Suggested repository structure
+
+```text
+ecommerce-platform/
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── test-plan.md
+│   └── screenshots/
+├── src/
+├── tests/
+└── sample-data/
 ```
 
-## Challenges & Solutions
+Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
 
-### Challenge 1: Inventory Sync
-**Problem**: Multiple users buying same product simultaneously causing overselling
+## Final README checklist
 
-**Solution**: Implemented optimistic locking with Redis to ensure inventory accuracy during concurrent purchases
+- [ ] Explain the problem and intended users.
+- [ ] List the features actually implemented.
+- [ ] Document setup and run commands that have been tested.
+- [ ] Describe architecture and important design decisions.
+- [ ] Include screenshots or a short demo of your own application.
+- [ ] Include automated test results and known limitations.
+- [ ] Add a security and privacy section.
+- [ ] Link to a live demo only if it genuinely exists.
 
-### Challenge 2: Payment Processing
-**Problem**: Handling payment failures gracefully while maintaining order integrity
+## Definition of done
 
-**Solution**: Built robust state machine for order processing with automatic retry logic and customer notifications
-
-### Challenge 3: Performance at Scale
-**Problem**: Slow page loads during traffic spikes
-
-**Solution**: Implemented multi-layer caching strategy (CDN, Redis, in-memory) and database query optimization
-
-## Results
-
-- **Performance**: 60% faster page load times compared to previous platform
-- **Conversion**: 25% increase in conversion rate due to improved UX
-- **Uptime**: 99.9% uptime over 6 months in production
-- **Scale**: Successfully handled Black Friday with 10k concurrent users
-- **Revenue**: Processing over $50k in monthly transactions
-
-## Tech Stack Details
-
-**Frontend**
-- React 18 with TypeScript
-- Tailwind CSS for styling
-- React Query for data fetching
-- React Hook Form for forms
-
-**Backend**
-- Node.js with Express
-- PostgreSQL with Prisma ORM
-- Redis for caching and sessions
-- Bull for job queues
-
-**Infrastructure**
-- Docker containers
-- AWS EC2 for hosting
-- AWS S3 for image storage
-- Cloudflare CDN
-- GitHub Actions for CI/CD
-
-**Payment & Services**
-- Stripe for payments
-- SendGrid for emails
-- Sentry for error tracking
-
-## Future Improvements
-
-- [ ] Mobile app (React Native)
-- [ ] Multi-language support
-- [ ] Wishlist and product recommendations
-- [ ] Live chat support
-- [ ] Advanced analytics dashboard
-
-## Screenshots
-
-*(Screenshots would go here in production)*
-
-## Lessons Learned
-
-1. **Start with Performance**: Built with performance in mind from day one rather than optimizing later
-2. **Testing Matters**: Comprehensive test suite caught critical bugs before production
-3. **Monitor Everything**: Proper logging and monitoring essential for maintaining uptime
-4. **User Feedback**: Regular user testing revealed UX issues we wouldn't have found otherwise
-
----
-
-**Project Status**: ✅ Live in Production  
-**GitHub**: [View Source Code](https://github.com/alexjohnson/ecommerce-platform)  
-**Demo**: [Try it Live](https://shop-demo.example.com)
+Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.

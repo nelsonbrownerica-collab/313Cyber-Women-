@@ -1,25 +1,11 @@
-# Configuration of Hugo
-# Guide: https://docs.hugoblox.com/tutorial/
-# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
-
-# Website name (set in params.yaml under hugoblox.branding.name)
-title: ''
-# Website URL
-baseURL: 'https://example.com/'
-
-############################
-## LANGUAGE
-############################
+# Hugo site configuration
+title: "313 Cyber Women"
+baseURL: "https://nelsonbrownerica-collab.github.io/313Cyber-Women-/"
 
 defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
-
-############################
-## ADVANCED
-############################
 
 build:
   writeStats: true
