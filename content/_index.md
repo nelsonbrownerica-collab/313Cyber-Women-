@@ -38,13 +38,13 @@ sections:
           light: "#F8FAFC"
           dark: "#030712"
       spacing:
-        padding: ["5rem", "0", "3rem", "0"]
+        padding: ["4rem", "0", "2rem", "0"]
 
   - block: portfolio
     id: projects
     content:
       title: "Explore My Projects"
-      subtitle: "Hands-on software builds with a security-first mindset. Open any project to follow its guided build plan, test the result, and document your work."
+      subtitle: "Choose a build guide to open its step-by-step lab, tools, testing plan, troubleshooting notes, evidence checklist, and final deliverables."
       count: 11
       filters:
         folders:
@@ -56,10 +56,14 @@ sections:
           tag: Web Applications
         - name: Security Tools
           tag: Security Tools
+        - name: APIs & Integrations
+          tag: APIs & Integrations
         - name: AI & Automation
-          tag: AI
+          tag: AI & Automation
         - name: Python
           tag: Python
+        - name: Data & Analytics
+          tag: Data & Analytics
       default_button_index: 0
     design:
       columns: 3
@@ -68,13 +72,13 @@ sections:
           light: "#FFFFFF"
           dark: "#030712"
       spacing:
-        padding: ["3rem", "0", "4rem", "0"]
+        padding: ["2rem", "0", "4rem", "0"]
 
   - block: tech-stack
     id: skills
     content:
       title: "Tools & Technologies"
-      subtitle: "Technologies used or explored across the project guides. Each project page lists its own setup requirements."
+      subtitle: "Tools used or explored across the guided builds. Each project lists its own setup requirements."
       categories:
         - name: Programming & Data
           items:
@@ -127,9 +131,6 @@ sections:
         url: "/projects/"
         new_tab: false
     design:
-      card:
-        css_class: "bg-gradient-to-br from-blue-100 via-slate-100 to-cyan-100 dark:from-blue-950 dark:via-slate-900 dark:to-slate-950"
-        text_color: dark
       background:
         color:
           light: "#F1F5F9"
