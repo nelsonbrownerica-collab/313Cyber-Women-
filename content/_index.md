@@ -45,8 +45,8 @@ sections:
     id: projects
     content:
       title: "Cybersecurity Software Projects"
-      subtitle: "Ten software builds designed to develop practical application-development skills through security-minded tools."
-      count: 10
+      subtitle: "Eleven software builds designed to develop practical application-development skills through security-minded tools."
+      count: 11
       filters:
         folders:
           - projects
