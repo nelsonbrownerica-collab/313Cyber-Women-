@@ -1,86 +1,171 @@
 ---
-title: "Phishing Awareness Learning Simulator"
+title: "Phishing Awareness Simulator"
 date: 2026-11-25
-summary: "An offline learning app that presents fictional email examples and teaches users to identify suspicious signals without sending messages."
+summary: "Create a local educational quiz that teaches users to spot suspicious messages. It does not send emails, collect credentials, track real users, or imitate a real organization."
 tags:
-  - "Frontend"
   - "Security Tools"
+  - "Guided Lab"
 authors:
   - me
 featured: false
 status: "Planned"
-role: "Independent project build"
-duration: "To be determined"
+role: "Independent guided build"
+duration: "8–14 hours"
 ---
-## Build status
+<div class="lab-hero">
+  <span class="lab-status">● PLANNED BUILD</span>
+  <span class="lab-level">Beginner</span>
+  <span class="lab-duration">8–14 hours</span>
+</div>
 
-**Planned — not implemented yet.** This page is a build brief. Do not describe the application as live, deployed, production-ready, or completed until you have built and tested it yourself.
+> **Portfolio status:** This is a guided build plan, not a claim that the application is already implemented. Change the status only after you have completed the work and saved evidence.
 
-## Project goal
+## Project overview
 
-An offline learning app that presents fictional email examples and teaches users to identify suspicious signals without sending messages.
+Create a local educational quiz that teaches users to spot suspicious messages. It does not send emails, collect credentials, track real users, or imitate a real organization.
 
-## What to build
+**Suggested stack:** HTML, CSS, JavaScript, local JSON
 
-Build a safe interactive quiz using made-up emails, fake domains, and harmless placeholder links.
+## Learning objectives
 
-## Suggested technology stack
+By completing this lab, you should be able to:
 
-HTML, CSS, JavaScript, local JSON, optional React.
+- Plan a small application and explain its architecture.
+- Build and validate the core workflow.
+- Test normal, invalid, and edge-case behavior.
+- Document security, privacy, accessibility, and known limitations.
+- Present reproducible evidence of your own implementation.
 
-Choose the smallest stack that runs comfortably on your computer. You can start with local JSON/CSV files and SQLite; cloud services and paid APIs are not required.
+## Before you begin
 
-## Step-by-step build plan
+- Use fictional sample data and accounts.
+- Keep API keys and passwords out of source control.
+- Work in a dedicated project folder; do not test against systems or data you do not own.
+- Commit small changes so you can recover if something breaks.
+- If your computer is low on storage, use the simplest stack and local files first.
 
-1. 1. Write 8 fictional email scenarios. 2. Tag each with signals such as urgency, sender mismatch, unusual request, or attachment bait. 3. Create a quiz screen. 4. Let learners select clues before seeing feedback. 5. Explain each answer in plain language. 6. Track score locally without collecting identity data. 7. Add keyboard and screen-reader support. 8. Test scoring and feedback logic.
+## Tools and setup
 
-## Data model and interfaces
+1. Install the current stable version of the language/runtime listed above.
+2. Install Visual Studio Code or another editor you already use.
+3. Create a new GitHub repository for this project.
+4. Clone it to your computer and open the folder in your editor.
+5. Create a `README.md`, `.gitignore`, and folders for source code, tests, sample data, and documentation.
+6. Record the versions of your tools in the README.
+7. Run a minimal “hello world” or starter app and save the successful output before adding features.
 
-Static scenario JSON; quiz state stored locally. No email sending, credential forms, or live phishing URLs.
+## Step-by-step lab guide
 
-## Acceptance criteria
+### Step 1. Set the learning goals
 
-- [ ] All examples are fictional
-- [ ] no credential collection
-- [ ] scoring is correct
-- [ ] feedback explains clues
-- [ ] keyboard navigation works.
+Choose 5–8 concepts: sender mismatch, urgency, suspicious links, unexpected attachments, requests for secrets, and reporting.
 
-## Evidence to save
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-- [ ] Screenshots
-- [ ] scenario JSON
-- [ ] quiz test results
-- [ ] accessibility notes
-- [ ] README.
+### Step 2. Create a static project
 
-## Suggested repository structure
+Create index.html, styles.css, app.js, and a fictional examples.json file. Use no external tracking scripts.
 
-```text
-phishing-awareness-simulator/
-├── README.md
-├── docs/
-│   ├── architecture.md
-│   ├── test-plan.md
-│   └── screenshots/
-├── src/
-├── tests/
-└── sample-data/
-```
+**Checkpoint:** Save a screenshot or short note showing this step works.
 
-Adapt this structure to the framework you actually choose. Do not commit secrets, private records, or real customer data.
+### Step 3. Write fictional examples
 
-## Final README checklist
+Create safe sample messages with fictional brands and reserved example domains. Include both suspicious and legitimate examples.
 
-- [ ] Explain the problem and intended users.
-- [ ] List the features actually implemented.
-- [ ] Document setup and run commands that have been tested.
-- [ ] Describe architecture and important design decisions.
-- [ ] Include screenshots or a short demo of your own application.
-- [ ] Include automated test results and known limitations.
-- [ ] Add a security and privacy section.
-- [ ] Link to a live demo only if it genuinely exists.
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 4. Build the message viewer
+
+Display sender, subject, message body, and link text. Make all links inert; do not navigate to external destinations.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 5. Add answer choices
+
+Ask learners to identify warning signs and choose a safe next step. Do not ask for passwords or personal information.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 6. Explain each answer
+
+After selection, explain the indicators and why the safe action is to verify through a trusted channel.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 7. Add progress and scoring
+
+Track score only in browser memory or local storage. Provide a reset button and disclose what is stored.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 8. Add accessibility
+
+Use semantic headings, keyboard-accessible controls, visible focus, and accessible feedback announcements.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 9. Test the scenarios
+
+Check every example, correct answer, explanation, reset, and mobile layout.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 10. Review privacy
+
+Confirm there is no analytics, credential collection, external email, or network submission.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 11. Capture evidence
+
+Save screenshots, example dataset, test checklist, and README.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+### Step 12. Write a facilitator note
+
+Explain that this is an educational simulation and should never be used to trick or shame participants.
+
+**Checkpoint:** Save a screenshot or short note showing this step works.
+
+
+## Testing checklist
+
+- [ ] The application starts using the documented command.
+- [ ] The main user workflow works with sample data.
+- [ ] Invalid and missing inputs are handled safely.
+- [ ] Errors are understandable and do not expose secrets or stack traces.
+- [ ] Keyboard navigation and mobile layout have been checked.
+- [ ] Automated tests pass, or manual test results are documented.
+- [ ] Dependencies and configuration have been reviewed.
+
+## Evidence checklist
+
+- [ ] Repository link with readable source code.
+- [ ] Screenshot of the working application.
+- [ ] Screenshot or text output of setup and run commands.
+- [ ] Architecture or data-flow diagram.
+- [ ] Test plan and test results.
+- [ ] Example input and output using fictional data.
+- [ ] README with setup, features, limitations, and security notes.
+
+## Final deliverables
+
+1. Source code in GitHub.
+2. A complete README with tested setup instructions.
+3. Tests and test results.
+4. Screenshots or a short demonstration.
+5. Architecture notes and known limitations.
+6. A brief reflection describing what you learned and what you would improve.
+
+## Troubleshooting
+
+- **Runtime or package command not found:** close and reopen the terminal after installation, then verify the runtime version.
+- **Dependency installation fails:** check the runtime version, network connection, and exact error; install only the packages this project needs.
+- **Application will not start:** read the first error message, check the file path and port, and fix one issue at a time.
+- **API returns an error:** inspect the status code and sanitized response; verify the request format and required fields.
+- **Tests fail:** reproduce one failing test, compare expected and actual values, and rerun the full suite after fixing it.
 
 ## Definition of done
 
-Move this project from **Planned** to **In Progress** when you begin implementation. Mark it **Completed** only after the working code, tests, screenshots, documentation, and limitations are committed to the repository. The starter brief itself is not evidence that the application has been built.
+Mark **In Progress** when you begin implementation. Mark **Completed** only when the working application, tests, screenshots, documentation, and limitations are committed. A plan or generated mockup alone is not completion evidence.
