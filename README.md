@@ -1,36 +1,36 @@
-# 313 Cyber Women — Software Development Portfolio
+# 313 Cyber Women — Software Developer Portfolio
 
-This repository contains Erica Nelson's software development portfolio, built with Hugo and HugoBlox.
+A custom static portfolio for Erica Nelson. This website is built with plain HTML, CSS, and JavaScript and deploys directly to GitHub Pages.
 
-The site focuses on practical software builds inspired by cybersecurity, automation, data, and AI. The **Cybersecurity Software Projects** category contains ten guided project briefs. Each project begins as a planned build and should only be presented as completed after the application has been implemented, tested, documented, and supported by the author's own evidence.
+## Technology
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- GitHub Pages with GitHub Actions
 
-## Portfolio structure
+## Local preview
+Open `index.html` in a browser, or run a simple local server from the repository root:
 
-- `content/_index.md` — homepage and project category
-- `content/projects/` — ten software project briefs and build guides
-- `data/authors/me.yaml` — portfolio author profile
-- `config/_default/` — Hugo site, navigation, and theme configuration
-
-## Local development
-
-Requirements: Hugo Extended (version specified in `hugoblox.yaml`), Go, Node.js, and pnpm.
-
-```bash
-pnpm install
-pnpm run dev
+```powershell
+py -m http.server 8000
 ```
 
-Build:
+Then open `http://localhost:8000`.
 
-```bash
-pnpm run build
-```
+## Project explorer
+The portfolio includes 11 project build guides. Every guide is marked **Planned** until the application is implemented and its evidence is committed. Each guide includes setup, numbered steps, testing, evidence, deliverables, troubleshooting, and a definition of done.
 
-## Project integrity
+## Deployment
+Every push to `main` runs `.github/workflows/deploy.yml`, packages the static site, and deploys it to GitHub Pages. No Hugo, Go, Node, package manager, theme, or build step is required.
 
-Project pages are starter briefs. They do not represent completed applications, production deployments, user counts, uptime, or performance results. Add real source code, tests, screenshots, demo links, and measured results only after you have completed the work.
+## Repository structure
+- `index.html` — portfolio homepage
+- `static/css/` — custom visual theme
+- `static/js/` — navigation and project filters
+- `projects/` — standalone project guide pages
+- `content/projects/` — original Markdown source copies of the project guides
+- `assets/media/authors/me.png` — profile portrait source
+- `static/uploads/resume.pdf` — resume file
 
-## Site
-
-GitHub Pages: https://nelsonbrownerica-collab.github.io/313Cyber-Women-/
-Source: https://github.com/nelsonbrownerica-collab/313Cyber-Women-
+## Accuracy
+Project status is not represented as completed without implementation evidence. Portfolio copy avoids invented employment, credentials, and project claims.
